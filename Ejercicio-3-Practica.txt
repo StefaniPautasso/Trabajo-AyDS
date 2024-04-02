@@ -1,0 +1,60 @@
+a)
+Narrativa sobre la problemática
+Las situaciones de emergencia se pueden dar en cualquier momento y es imprescindible tener conocimiento acerca de primeros auxilios. Es importante remarcar la importancia de los mismos, la educación en primeros auxilios es fundamental para la sociedad ayudando a preservar la salud y la seguridad. Actuar rápido y bien ante una emergencia es posible si se tienen los conocimientos básicos y necesarios. Por lo que se pensó en una herramienta didáctica y simple para difundir los conocimientos sobre primeros auxilios.
+
+b)
+-¿Cuál es el problema a resolver?
+La principal problemática sobre la que se centra nuestro proyecto es la falta de conocimiento sobre primeros auxilios y cómo actuar ante situaciones de emergencia. 
+
+
+-¿Cuál es el contexto en el que se sitúa el problema?
+El contexto en el que se sitúa el problema es ante una sociedad que, por lo general, no está tan informada acerca de cómo actuar ante situaciones de emergencia, se busca brindar una herramienta simple, eficaz, accesible y educativa que se encargue de enseñar los conocimientos necesarios para que las personas que la accedan estén preparadas para afrontar dichas situaciones y tengan a su vez un espacio para poder evaluar sus conocimientos. 
+
+
+-Construyan un glosario, en el que definan el vocabulario relevante del contexto que como desarrolladores debemos conocer.
+Primeros auxilios: Asistencia que se le brinda a una persona en situación de emergencia para que luego reciba una atención más especializada.
+Situación de emergencia: Situación en la cual una persona se encuentra en estado vulnerable y necesita de primeros auxilios. Puntualmente en el contexto de nuestro proyecto se van a tratar las situaciones de:
+ *Asfixia
+ *Shock
+ *Hemorragias
+ *Quemaduras
+ *Fracturas, esquinces y desgarros
+ *Falta de respuesta
+ *Intoxicación 
+ *Convulsión 
+ *Ahogamiento
+ *Mordeduras de animales y picaduras de insectos
+ *Hipotermia e Hipertermia
+Lecciones: Instancias de aprendizaje donde a través de textos, imágenes y videos explicativos los usuarios pueden acceder a la información de cada sección. 
+Test: Instancias evaluativas en las cuales se harán preguntas para que el usuario responda y pueda corroborar sus conocimientos en los temas tratados.
+
+
+-¿Quiénes son los usuario/actores que van a interactuar con el sistema?
+Los usuarios serán todas aquellas personas interesadas en aprender sobre los primeros auxilios necesarios en las situaciones de emergencia más comunes.   
+
+
+-¿Cómo y para qué van a utilizar el sistema estos usuarios/actores?
+Los usuarios van a poder interactuar con el sistema a través de diferentes secciones de aprendizaje que representarán los tipos de emergencias más comunes y en las cuales en cada sección se informará sobre cómo reconocer la situación de emergencia, cómo actuar y se podrá acceder a los test correspondientes. Además el usuario podrá acceder a una sección especial "Mi Progreso" donde se mostrará su recorrido por las diferentes lecciones y de todas las secciones juntas.     
+
+
+c)
+Requerimientos Funcionales:
+-Crear Perfil
+-Modificar Perfil
+-Borrar Perfil
+-Acceder a las lecciones
+-Acceder a los test
+-Acceder a Mi Progreso
+
+d)
+Requerimientos no funcionales:
+Interfaz amigable
+Accesibilidad
+Disponibilidad de uso Offline
+Actualización y mantenimiento
+
+e)
+Preguntas a realizar:
+¿Haría falta agregar otras situaciones de emergencia que se consideren comunes?
+
+
