@@ -1,0 +1,94 @@
+Especificación de Requisitos de Software para el Sistema de aprendizaje de primeros auxilios
+1. Introducción
+  1.1 Propósito
+  El sistema tiene como objetivo educar a la sociedad en los primeros auxilios necesarios ante
+  situaciones críticas y además concientizar sobre la importancia que estos tienen, contribuyendo
+  así a crear una sociedad más consciente, empática  y con más predisposición a actuar, promoviendo
+  la unión de la comunidad ante circunstancias difíciles.  
+  1.2 Convenciones del Documento
+  1.3 Audiencia Prevista y Sugerencias de Lectura
+  1.4 Alcance del Producto
+  El sistema proporciona un ambiente de aprendizaje estructurado en secciones especializadas en cada
+  tipo de situación de emergencia que requiera de primeros auxilios. Al mismo tiempo en cada una de
+  estas secciones se puede acceder a un test para corroborar lo aprendido. Además se cuenta con una
+  sección para que el usuario pueda ver las estadísticas de su aprendizaje en relación a cada
+  sección y en general de todo el contenido.  
+  1.5 Referencias
+2. Descripción General
+  2.1 Perspectiva del Producto
+  El contexto en el que se sitúa el problema es ante una sociedad que, por lo general, no está tan
+  informada acerca de cómo actuar ante situaciones de emergencia, se busca brindar una herramienta
+  simple, eficaz, accesible y educativa que se encargue de otorgar los conocimientos necesarios para
+  que las personas que la accedan estén preparadas para afrontar dichas situaciones y tengan a su
+  vez un espacio para poder evaluar sus conocimientos.
+  2.2 Funciones del Producto
+<Resumir las principales funciones que el producto debe realizar o permitir al usuario realizar. Los detalles se proporcionarán en la Sección 3, por lo que aquí solo se necesita un resumen de alto nivel (como una lista de viñetas). Organizar las funciones para que sean comprensibles para cualquier lector de la SRS. Una imagen de los principales grupos de requisitos relacionados y cómo se relacionan, como un diagrama de flujo de datos de nivel superior o un diagrama de clases de objetos, a menudo es efectiva.>
+2.3 Clases y Características del Usuario
+<Identificar las diversas clases de usuarios que se anticipa utilizarán este producto. Las clases de usuarios pueden diferenciarse según la frecuencia de uso, el subconjunto de funciones del producto utilizado, la experiencia técnica, los niveles de seguridad o privilegios, el nivel educativo o la experiencia. Describir las características pertinentes de cada clase de usuario. Es posible que ciertos requisitos se apliquen solo a ciertas clases de usuarios. Distinguir las clases de usuarios más importantes para este producto de aquellas que son menos importantes de satisfacer.>
+2.4 Entorno Operativo
+<Describir el entorno en el que operará el software, incluida la plataforma de hardware, el sistema operativo y sus versiones, y cualquier otro componente de software o aplicaciones con los que debe coexistir pacíficamente.>
+2.5 Restricciones de Diseño e Implementación
+<Describir cualquier elemento o problema que limite las opciones disponibles para los desarrolladores. Estos podrían incluir: políticas corporativas o regulatorias; limitaciones de hardware (requisitos de tiempo, requisitos de memoria); interfaces con otras aplicaciones; tecnologías, herramientas y bases de datos específicas que se utilizarán; operaciones en paralelo; requisitos de idioma; protocolos de comunicaciones; consideraciones de seguridad; convenciones de diseño o estándares de programación (por ejemplo, si la organización del cliente será responsable de mantener el software entregado).>
+2.6 Documentación del Usuario
+<Listar los componentes de la documentación del usuario (como manuales del usuario, ayuda en línea y tutoriales) que se entregarán junto con el software. Identificar cualquier formato o estándar de entrega de documentación del usuario conocido.>Especificación de Requisitos de Software para <Proyecto>
+2.7
+Página 3
+Suposiciones y Dependencias
+<Enumerar cualquier factor supuesto (en lugar de hechos conocidos) que pueda afectar los requisitos establecidos en la SRS. Estos podrían incluir componentes de terceros o comerciales que planea utilizar, problemas relacionados con el entorno de desarrollo o operativo, o restricciones. El proyecto podría verse afectado si estas suposiciones son incorrectas, no se comparten o cambian. También identificar cualquier dependencia que tenga el proyecto en factores externos, como componentes de software que planea reutilizar de otro proyecto, a menos que ya estén documentados en otro lugar (por ejemplo, en el documento de visión y alcance o el plan del proyecto).>
+3. Requisitos de Interfaz Externa
+3.1 Interfaces de Usuario
+<Describir las características lógicas de cada interfaz entre el producto de software y los usuarios. Esto puede incluir imágenes de pantalla de muestra, cualquier estándar de GUI o guías de estilo de familia de productos que se deben seguir, restricciones de diseño de pantalla, botones estándar y funciones (por ejemplo, ayuda) que aparecerán en cada pantalla, accesos directos de teclado, estándares de visualización de mensajes de error, etc. Definir los componentes de software para los cuales se necesita una interfaz de usuario. Los detalles del diseño de la interfaz de usuario deben documentarse en una especificación de interfaz de usuario separada.>
+3.2 Interfaces de Hardware
+<Describir las características lógicas y físicas de cada interfaz entre el producto de software y los componentes de hardware del sistema. Esto puede incluir los tipos de dispositivos admitidos, la naturaleza de las interacciones de datos y control entre el software y el hardware, y los protocolos de comunicación que se utilizarán.>
+3.3 Interfaces de Software
+<Describir las conexiones entre este producto y otros componentes de software específicos (nombre y versión), incluidas bases de datos, sistemas operativos, herramientas, bibliotecas y componentes comerciales integrados. Identificar los elementos de datos o mensajes que entran y salen del sistema y describir el propósito de cada uno. Describir los servicios necesarios y la naturaleza de las comunicaciones. Hacer referencia a documentos que describan protocolos de interfaz de programación de aplicaciones detallados. Identificar los datos que se compartirán entre los componentes de software. Si el mecanismo de intercambio de datos debe implementarse de una manera específica (por ejemplo, uso de un área de datos global en un sistema operativo multitarea), especificar esto como una restricción de implementación.>
+3.4 Interfaces de Comunicaciones
+<Describir los requisitos asociados con cualquier función de comunicaciones requerida por este producto, incluidos correo electrónico, navegador web, protocolos de comunicaciones del servidor de red, formularios electrónicos, etc. Definir cualquier formato de mensaje pertinente. Identificar cualquier estándar de comunicación que se utilizará, como FTP o HTTP. Especificar cualquier problema de seguridad o cifrado de comunicación, tasas de transferencia de datos y mecanismos de sincronización.>Especificación de Requisitos de Software para <Proyecto>
+4.
+Página 4
+Características del Sistema
+<Esta plantilla ilustra la organización de los requisitos funcionales del producto por características del sistema, los principales servicios proporcionados por el producto. Puede preferir organizar esta sección por caso de uso, modo de operación, clase de usuario, clase de objeto, jerarquía funcional o combinaciones de estos, lo que tenga más sentido lógico para su producto.>
+4.1
+Característica del Sistema 1
+<No diga realmente "Característica del Sistema 1". Indique el nombre de la característica en solo unas pocas palabras.>
+4.1.1
+Descripción y Prioridad
+<Proporcionar una breve descripción de la característica e indicar si es de Alta, Media o Baja prioridad. También se pueden incluir calificaciones específicas de componentes de prioridad, como beneficio, penalización, costo y riesgo (cada uno calificado en una escala relativa de 1 a 9).>
+4.1.2
+Secuencias de Estímulo/Respuesta
+<Enumerar las secuencias de acciones del usuario y respuestas del sistema que estimulan el comportamiento definido para esta característica. Estos corresponderán a los elementos de diálogo asociados con casos de uso.>
+4.1.3
+Requisitos Funcionales
+<Enumerar los requisitos funcionales detallados asociados con esta característica. Estas son las capacidades de software que deben estar presentes para que el usuario pueda llevar a cabo los servicios proporcionados por la característica o para ejecutar el caso de uso. Incluir cómo debe responder el producto a condiciones de error anticipadas o entradas no válidas. Los requisitos deben ser concisos, completos, no ambiguos, verificables y necesarios. Utilizar "PDT" como marcador de posición para indicar cuando la información necesaria aún no está disponible.>
+<Cada requisito debe identificarse de manera única con un número de secuencia o una etiqueta significativa de algún tipo.>
+REQ-1:
+REQ-2:
+4.2 Característica del Sistema 2 (y así sucesivamente)
+5. Otros Requisitos No Funcionales
+5.1 Requisitos de Rendimiento
+<Si hay requisitos de rendimiento para el producto bajo diversas circunstancias, indíquelos aquí y explique su justificación, para ayudar a los desarrolladores a entender la intención y tomar decisiones de diseño adecuadas. Especificar las relaciones temporales para sistemas en tiempo real. Hacer estos requisitos lo más específicos posible. Es posible que necesite establecer requisitos de rendimiento para requisitos o características funcionales individuales.>Especificación de Requisitos de Software para <Proyecto>
+5.2
+Página 5
+Requisitos de Seguridad
+<Especificar aquellos requisitos relacionados con posibles pérdidas, daños o daños que podrían resultar del uso del producto. Definir cualquier salvaguarda o acciones que se deben tomar, así como acciones que se deben evitar. Hacer referencia a cualquier política externa o regulaciones que establezcan problemas de seguridad que afecten al diseño o uso del producto. Definir cualquier certificación de seguridad que se deba cumplir.>
+5.3
+Requisitos de Seguridad
+<Especificar cualquier requisito relacionado con problemas de seguridad o privacidad en torno al uso del producto o la protección de los datos utilizados o creados por el producto. Definir cualquier requisito de autenticación de identidad del usuario. Hacer referencia a cualquier política externa o regulaciones que contengan problemas de seguridad que afecten al producto. Definir cualquier certificación de seguridad o privacidad que se deba cumplir.>
+5.4
+Atributos de Calidad del Software
+<Especificar cualquier característica de calidad adicional para el producto que sea importante tanto para los clientes como para los desarrolladores. Algunas para considerar son: adaptabilidad, disponibilidad, corrección, flexibilidad, interoperabilidad, mantenibilidad, portabilidad, confiabilidad, reutilización, robustez, probabilidad de prueba y usabilidad. Escribir estos para ser específicos, cuantitativos y verificables cuando sea posible. Como mínimo, aclarar las preferencias relativas para varios atributos, como facilidad de uso sobre facilidad de aprendizaje.>
+5.5
+Reglas de Negocio
+<Enumerar los principios operativos sobre el producto, como qué individuos o roles pueden realizar qué funciones bajo circunstancias específicas. Estos no son requisitos funcionales en sí mismos, pero pueden implicar ciertos requisitos funcionales para hacer cumplir las reglas.>
+6.
+Otros Requisitos
+<Definir cualquier otro requisito no cubierto en otra parte de la SRS. Esto podría incluir requisitos de base de datos, requisitos de internacionalización, requisitos legales, objetivos de reutilización para el proyecto, etc. Agregar nuevas secciones que sean pertinentes para el proyecto.>
+Apéndice A: Glosario
+<Definir todos los términos necesarios para interpretar correctamente la SRS, incluidos acrónimos y abreviaturas. Puede desear construir un glosario separado que abarque múltiples proyectos o toda la organización, e incluir solo términos específicos de un solo proyecto en cada SRS.>
+Apéndice B: Modelos de Análisis
+<Opcionalmente, incluir cualquier modelo de análisis pertinente, como diagramas de flujo de datos, diagramas de clases, diagramas de transición de estado o diagramas de entidad-relación.>
+Especificación de Requisitos de Software para <Proyecto>
+Página 6
+Apéndice C: Lista de Por Determinar
+<Recopilar una lista numerada de las referencias por determinar (TBD) que permanecen en la SRS para que puedan ser rastreadas hasta su cierre.>
+
