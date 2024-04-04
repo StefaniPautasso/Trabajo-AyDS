@@ -1,4 +1,5 @@
 Especificación de Requisitos de Software para el Sistema de aprendizaje de primeros auxilios
+
 1. Introducción
   1.1 Propósito
   El sistema tiene como objetivo educar a la sociedad en los primeros auxilios necesarios ante
@@ -7,7 +8,7 @@ Especificación de Requisitos de Software para el Sistema de aprendizaje de prim
   la unión de la comunidad ante circunstancias difíciles.  
   1.2 Convenciones del Documento
   1.3 Audiencia Prevista y Sugerencias de Lectura
-  Desarrolladores, diseñadores, gerentes de proyecto, clientes y equipo de pruebas.
+  Este documento está previsto para desarrolladores, diseñadores, gerentes de proyecto, clientes y equipo de pruebas.
   1.4 Alcance del Producto
   El sistema proporciona un ambiente de aprendizaje estructurado en secciones especializadas en cada
   tipo de situación de emergencia que requiera de primeros auxilios. Al mismo tiempo en cada una de
@@ -24,8 +25,8 @@ Especificación de Requisitos de Software para el Sistema de aprendizaje de prim
   vez un espacio para poder evaluar sus conocimientos.
   2.2 Funciones del Producto
   - Acceso a lecciones en cada sección.
-  - Realización de test después de cada lección.
-  - Visualización de estadisticas de aprendizaje
+  - Acceso y realización de test después de cada lección.
+  - Visualización de estadisticas de aprendizaje.
 2.3 Clases y Características del Usuario
   - Usuarios estudiantes: aquellos usuarios que acceden con fines de aprendizaje.
   - Administradores: usuarios con privilegios para gestionar contenido
@@ -34,7 +35,7 @@ Especificación de Requisitos de Software para el Sistema de aprendizaje de prim
 2.5 Restricciones de Diseño e Implementación
 <Describir cualquier elemento o problema que limite las opciones disponibles para los desarrolladores. Estos podrían incluir: políticas corporativas o regulatorias; limitaciones de hardware (requisitos de tiempo, requisitos de memoria); interfaces con otras aplicaciones; tecnologías, herramientas y bases de datos específicas que se utilizarán; operaciones en paralelo; requisitos de idioma; protocolos de comunicaciones; consideraciones de seguridad; convenciones de diseño o estándares de programación (por ejemplo, si la organización del cliente será responsable de mantener el software entregado).>
 2.6 Documentación del Usuario
-Tutoriales integrados en el sistema.
+Los usuarios van a poder acceder a tutoriales integrados en el sistema.
 2.7 Suposiciones y Dependencias
 <Enumerar cualquier factor supuesto (en lugar de hechos conocidos) que pueda afectar los requisitos establecidos en la SRS. Estos podrían incluir componentes de terceros o comerciales que planea utilizar, problemas relacionados con el entorno de desarrollo o operativo, o restricciones. El proyecto podría verse afectado si estas suposiciones son incorrectas, no se comparten o cambian. También identificar cualquier dependencia que tenga el proyecto en factores externos, como componentes de software que planea reutilizar de otro proyecto, a menos que ya estén documentados en otro lugar (por ejemplo, en el documento de visión y alcance o el plan del proyecto).>
 3. Requisitos de Interfaz Externa
@@ -55,10 +56,13 @@ Tutoriales integrados en el sistema.
 4.1.2 Secuencias de Estímulo/Respuesta
 <Enumerar las secuencias de acciones del usuario y respuestas del sistema que estimulan el comportamiento definido para esta característica. Estos corresponderán a los elementos de diálogo asociados con casos de uso.>
 4.1.3 Requisitos Funcionales
-<Enumerar los requisitos funcionales detallados asociados con esta característica. Estas son las capacidades de software que deben estar presentes para que el usuario pueda llevar a cabo los servicios proporcionados por la característica o para ejecutar el caso de uso. Incluir cómo debe responder el producto a condiciones de error anticipadas o entradas no válidas. Los requisitos deben ser concisos, completos, no ambiguos, verificables y necesarios. Utilizar "PDT" como marcador de posición para indicar cuando la información necesaria aún no está disponible.>
-<Cada requisito debe identificarse de manera única con un número de secuencia o una etiqueta significativa de algún tipo.>
-REQ-1:
-REQ-2:
+-Crear Perfil
+-Modificar Perfil
+-Borrar Perfil
+-Acceder a las lecciones
+-Acceder a los test
+-Acceder a Mi Progreso
+
 5. Otros Requisitos No Funcionales
 - Interfaz amigable
 - Accesibilidad
@@ -80,6 +84,19 @@ Usabilidad: El sistema debe ser facil de usar para las personas de todas las eda
 6.Otros Requisitos
 <Definir cualquier otro requisito no cubierto en otra parte de la SRS. Esto podría incluir requisitos de base de datos, requisitos de internacionalización, requisitos legales, objetivos de reutilización para el proyecto, etc. Agregar nuevas secciones que sean pertinentes para el proyecto.>
 Apéndice A: Glosario
+- Primeros auxilios: Asistencia que se le brinda a una persona en situación de emergencia para que luego reciba una atención más especializada.
+- Situación de emergencia: Situación en la cual una persona se encuentra en estado vulnerable y necesita de primeros auxilios. Puntualmente en el contexto de nuestro proyecto se van a tratar las situaciones de:
+ *Asfixia
+ *Shock
+ *Hemorragias
+ *Quemaduras
+ *Fracturas, esquinces y desgarros
+ *Falta de respuesta
+ *Intoxicación 
+ *Convulsión 
+ *Ahogamiento
+ *Mordeduras de animales y picaduras de insectos
+ *Hipotermia e Hipertermia
 - Lecciones: Instancias de aprendizaje donde a través de textos, imágenes y videos explicativos los usuarios pueden acceder a la información de cada sección. 
 - Test: Instancias evaluativas en las cuales se harán preguntas para que el usuario responda y pueda corroborar sus conocimientos en los temas tratados.
 Apéndice B: Modelos de Análisis
