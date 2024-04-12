@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+
+\title{Especificación de Requisitos de Software para el Sistema de Aprendizaje de Primeros Auxilios}
+\author{Pautasso Stefani, Pautasso Gisel}
+\date{2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+    \subsection{Propósito}
+        El sistema tiene como objetivo educar a la sociedad en los primeros auxilios necesarios ante
+        situaciones críticas y además concientizar sobre la importancia que estos tienen, contribuyendo
+        así a crear una sociedad más consciente, empática  y con más predisposición a actuar, promoviendo
+        la unión de la comunidad ante circunstancias difíciles. 
+    \subsection{Audiencia Prevista y Sugerencias de Lectura}
+        Este documento está previsto para desarrolladores, diseñadores, gerentes de proyecto, clientes y equipo de pruebas.
+    \subsection{Alcance del Producto}
+        El sistema proporciona un ambiente de aprendizaje estructurado en secciones especializadas en cada tipo de situación de emergencia que requiera primeros auxilios. Además, permite a los usuarios evaluar su aprendizaje y ver estadísticas relacionadas con su progreso.
+
+\section{Descripción General}
+    \subsection{Perspectiva del Producto}
+        El sistema proporciona una herramienta simple, eficaz y accesible para educar a las personas sobre cómo identificar una situación de emergencia y cómo actuar ante la misma.
+    \subsection{Funciones del Producto}
+        \begin{itemize}
+            \item Autenticación de usuario.
+            \item Navegación por secciones.
+            \item Acceso a lecciones en cada sección.
+            \item Realización de test.
+            \item Visualización de estadísticas de aprendizaje.
+        \end{itemize}
+    \subsection{Clases y Características del Usuario}
+        \begin{itemize}
+            \item Usuarios estudiantes: aquellos usuarios que acceden con fines de aprendizaje.
+            \item Administradores: usuarios con privilegios para gestionar contenido.
+        \end{itemize}
+    \subsection{Documentación del Usuario}
+        Los usuarios van a poder acceder a tutoriales integrados en el sistema.
+
+\section{Características del Sistema}
+    \subsection{Característica del Sistema de Aprendizaje de Primeros auxilios}
+        \subsubsection{Requisitos Funcionales}
+        \begin{itemize}
+            \item Autenticación de Usuario: Los usuarios del sistema deben poder iniciar sesion en el sistema a través de un nombre y una contraseña.
+            \item Navegación por secciones: Seleccionar entre varias secciones referentes a los ejes temáticos de aprendizaje
+            \item Acceso a lecciones en cada sección: Dentro de cada sección el usuario puede acceder a diferentes lecciones con contenido informativo de cada eje temático.
+            \item Realización de test: Despues de completar las lecciones correspondientes a una sección, se tendrá acceso a un test evaluativo del conocimiento adquirido a través de preguntas de opción múltiple.
+            \item Visualización de estadísticas de aprendizaje: El usuario puede ver su progreso, teniendo información del porcentaje de lecciones realizadas para cada sección, secciones completadas, asi como tambien puntaje obtenido en cada sección.
+        \end{itemize}
+\section{Otros Requisitos No Funcionales}
+    \begin{itemize}
+        \item Usabilidad: La interfaz de usuario debe ser intuitiva y fácil de usar para usuarios de distintas edades.
+        \item Seguridad: El sistema debe proteger la información confidencial de los usuarios.
+        \item Disponibilidad de uso offline.
+        \item Actualización y mantenimiento.
+    \end{itemize}
+\section{Otros Requisitos}
+    \subsection{Apéndice A: Glosario}
+        \begin{itemize}
+            \item Primeros auxilios: Asistencia que se brinda a una persona en situación de emergencia.
+            \item Situación de emergencia: Situación en la que una persona se encuentra en estado vulnerable y necesita primeros auxilios.
+            \item Sección: Se corresponde con una temática de primeros auxilios.
+            \item Leccion: Instancia de aprendizaje con contenido informativo.
+            \item Test: Instancia evaluativa para corroborar conocimientos.
+        \end{itemize}
+\end{document}
