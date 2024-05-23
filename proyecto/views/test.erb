@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test de <%= @section.title %></title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+  <h1>Test de <%= @section.title %></h1>
+  <% @questions.each do |question| %>
+    <form action="/sections/<%= @section.id %>/test/<%= question.id %>/answer" method="POST">
+      <p><%= question.question_text %></p>
+      <% question.options.each do |option| %>
+        <input type="radio" id="option<%= option.id %>" name="answer" value="<%= option.id %>">
+        <label for="option<%= option.id %>"><%= option.option_text %></label><br>
+      <% end %>
+      <input type="submit" value="Responder">
+    </form>
+    <hr>
+  <% end %>
+</body>
+</html>
+
