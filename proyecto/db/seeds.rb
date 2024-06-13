@@ -1,0 +1,6 @@
+require_relative 'seeds/users'
+require_relative 'seeds/sections'
+require_relative 'seeds/lessons'
+require_relative 'seeds/tests'
+require_relative 'seeds/questions'
+require_relative 'seeds/options'
