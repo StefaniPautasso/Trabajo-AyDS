@@ -1,0 +1,11 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 50
+  write_timeout: 300
+  read_timeout: 300
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
