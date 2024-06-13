@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progreso del Usuario</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+  <h1>Progreso del Usuario</h1>
+  <ul>
+    <% if @progress.any? %>
+      <h2>Secciones Completadas:</h2>
+      <ul>
+        <% @progress.each do |user_section| %>
+          <li><%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%</li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Aún no has completado ninguna sección.</p>
+    <% end %>
+
+    <a href="/menu">Volver al menú</a>
+  </ul>
+</body>
+</html>
+
+
+
+
+
+

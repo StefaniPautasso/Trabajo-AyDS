@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secciones</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body id="sections">
+  <h1>Secciones Disponibles</h1>
+  <ul>
+    <% @sections.each do |section| %>
+      <li><a href="/sections/<%= section.id %>"><%= section.title %></a></li>
+    <% end %>
+  </ul>
+  <a href="/menu">Volver al menú</a>
+  <form action="/logout" method="post">
+    <button type="submit">Cerrar sesión</button>
+  </form>
+</body>
+</html>
+
+

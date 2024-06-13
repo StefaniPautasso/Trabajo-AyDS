@@ -1,0 +1,347 @@
+#welcome {
+  text-align: center;
+}
+
+#welcome .container {
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+#welcome h1 {
+  color: #c00;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#welcome .info-box {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px auto 20px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  font-style: italic;
+  color: #800020;
+  font-size: 14px;
+  width: 80%;
+  background-color: transparent;
+}
+
+#welcome .image {
+  display: block;
+  margin: 20px auto;
+  max-width: 20%;
+  height: auto;
+  opacity: 0.8;
+}
+
+#welcome .register-link a,
+#welcome .login-link a {
+  display: inline-block;
+  background-color: #c00; /* Color de fondo rojo */
+  color: white;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#welcome .register-link a:hover,
+#welcome .login-link a:hover {
+  background-color: #f00; /* Cambio de color al pasar el mouse */
+}
+
+
+/* Estilos específicos para el formulario de inicio de sesión */
+#login {
+  text-align: center; /* Centrar el contenido */
+}
+
+#login .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#login h1 {
+  color: #c00;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#login button {
+  background-color: #c00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+  width: 220px;
+  text-align: center;
+}
+
+#login button:hover {
+  background-color: #f00;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+  width: calc(100% - 40px);
+  margin: 5px 20px;
+  padding: 10px;
+}
+
+#login .register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#login .register-link a {
+  display: block;
+  background-color: transparent;
+  color: #007bff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#login .register-link a:hover {
+  background-color: #f00;
+  color: white;
+}
+
+#login .right-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100px;
+  height: auto;
+  opacity: 0.8;
+}
+
+#register {
+  text-align: center;
+}
+
+#register .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#register h1 {
+  color: #c00;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#register button {
+  background-color: #c00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+  width: 220px;
+  text-align: center;
+}
+
+#register button:hover {
+  background-color: #f00;
+}
+
+#register input[type="text"],
+#register input[type="password"] {
+  width: calc(100% - 40px);
+  margin: 5px 20px;
+  padding: 10px;
+}
+
+#register .login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#register .login-link a {
+  display: block;
+  background-color: transparent;
+  color: #007bff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#register .login-link a:hover {
+  background-color: #f00;
+  color: white;
+}
+
+#menu {
+  text-align: center;
+}
+
+#menu ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#menu ul li {
+  margin-bottom: 10px;
+}
+
+#menu ul li a {
+  display: block;
+  padding: 12px 24px;
+  background-color: #c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#menu ul li a:hover {
+  background-color: #f00;
+}
+
+#menu .logout-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #c00;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+#menu .logout-link:hover {
+  color: #f00;
+}
+
+#sections {
+  text-align: center;
+}
+
+#sections .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#sections ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#sections ul li {
+  margin-bottom: 10px;
+}
+
+#sections ul li a {
+  display: block;
+  padding: 10px 20px;
+  background-color: #c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#sections ul li a:hover {
+  background-color: #f00;
+}
+
+#sections .nav-links {
+  display: block;
+  margin-top: 20px;
+}
+
+#sections .nav-links a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+#sections .nav-links a:hover {
+  text-decoration: underline;
+}
+
+#section {
+  text-align: center;
+}
+
+#section .container {
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+#section h1 {
+  color: #c00;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#section li {
+  margin-bottom: 10px;
+}
+
+#section li a {
+  display: inline-block;
+  background-color: #c00;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#section li a:hover {
+  background-color: #f00;
+}
+
+#section .next-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 20px;
+}
+
+#section .next-button:hover {
+  background-color: #0056b3;
+}
