@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Resultado del Test</title>
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <h1>Resultado del Test</h1>
-  <p><%= @message %></p>
-  <p>Puntaje: <%= @score %>/<%= @total_questions %> (<%= @percentage %>%)</p>
-  <a href="/sections">Volver a las Secciones</a>
+  <div class="result-container">
+    <h1>Resultado del Test</h1>
+    <p><%= @message %></p>
+    <p class="score">Puntaje: <%= @score %>/<%= @total_questions %> (<%= @percentage %>%)</p>
+    <a href="/sections" class="return-link">Volver a las Secciones</a>
+  </div>
 </body>
 </html>
 

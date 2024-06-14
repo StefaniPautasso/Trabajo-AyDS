@@ -6,17 +6,20 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body id="sections">
-  <h1>Secciones Disponibles</h1>
-  <ul>
-    <% @sections.each do |section| %>
-      <li><a href="/sections/<%= section.id %>"><%= section.title %></a></li>
-    <% end %>
-  </ul>
-  <a href="/menu">Volver al menú</a>
-  <form action="/logout" method="post">
-    <button type="submit">Cerrar sesión</button>
-  </form>
+  <div class="container">
+    <h1>Secciones Disponibles</h1>
+    <ul class="section-list">
+      <% @sections.each do |section| %>
+        <li><a href="/sections/<%= section.id %>"><%= section.title %></a></li>
+      <% end %>
+    </ul>
+    <a href="/menu" class="back-link">Volver al menú</a>
+    <form action="/logout" method="post">
+      <button type="submit">Cerrar sesión</button>
+    </form>
+  </div>
 </body>
 </html>
+
 
 

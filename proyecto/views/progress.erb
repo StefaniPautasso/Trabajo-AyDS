@@ -7,23 +7,25 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <h1>Progreso del Usuario</h1>
-  <ul>
+  <div class="progress-container">
+    <h1>Progreso del Usuario</h1>
     <% if @progress.any? %>
       <h2>Secciones Completadas:</h2>
-      <ul>
+      <ul class="progress-list">
         <% @progress.each do |user_section| %>
-          <li><%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%</li>
+          <li class="progress-item">
+            <%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%
+          </li>
         <% end %>
       </ul>
     <% else %>
       <p>Aún no has completado ninguna sección.</p>
     <% end %>
-
     <a href="/menu">Volver al menú</a>
-  </ul>
+  </div>
 </body>
 </html>
+
 
 
 

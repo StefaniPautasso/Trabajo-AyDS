@@ -5,11 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <style>
+        /* Estilos específicos para esta página */
+        #profile {
+            text-align: center;
+        }
+        #profile .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #profile h1 {
+            color: #c00;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #profile .user-info {
+            margin-bottom: 20px;
+        }
+        #profile .user-info .profile-image {
+            width: 150px; /* Ajusta el tamaño de la imagen según sea necesario */
+            height: 150px; /* Ajusta la altura de la imagen */
+            border-radius: 50%; /* Para hacer la imagen redonda */
+            border: 3px solid #c00; /* Borde alrededor de la imagen */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
+            overflow: hidden; /* Para asegurarse de que la imagen redonda no se desborde */
+            display: inline-block; /* Para que el margen automático funcione correctamente */
+            margin-bottom: 10px; /* Espacio debajo de la imagen */
+        }
+        #profile .user-info img {
+            width: 100%; /* Ajusta el tamaño de la imagen al 100% del contenedor */
+            height: auto; /* Altura automática */
+            display: block; /* Asegura que la imagen se muestre correctamente como bloque */
+        }
+        #profile .user-name {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        #profile .menu-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #c00;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        #profile .menu-link:hover {
+            background-color: #f00;
+        }
+    </style>
 </head>
 <body>
-    <h1>Mi Perfil</h1>
-    <p>Bienvenido, <%= @user.name %>!</p>
-    <a href="/menu">Volver al menú</a>
+    <div id="profile">
+        <div class="container">
+            <h1>Mi Perfil</h1>
+            <div class="user-info">
+                <!-- Div que define el círculo para la imagen -->
+                <div class="profile-image">
+                    <!-- Ruta de la imagen utilizando la carpeta 'public' como raíz -->
+                    <img src="/images/img2.png" alt="Foto de perfil">
+                </div>
+                <div class="user-name">Bienvenido, <%= @user.name %>!</div>
+            </div>
+            <a class="menu-link" href="/menu">Volver al menú</a>
+        </div>
+    </div>
 </body>
 </html>
+
 

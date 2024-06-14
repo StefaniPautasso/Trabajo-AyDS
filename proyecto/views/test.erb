@@ -10,21 +10,58 @@
   <% if @error %>
     <p style="color: red;"><%= @error %></p>
   <% end %>
-  <form action="/sections/<%= @section.id %>/test" method="POST">
-    <% @questions.each do |question| %>
-      <p><%= question.content %></p>
-      <% question.options.each do |option| %>
-        <input type="radio" id="option<%= option.id %>" name="question_<%= question.id %>" value="<%= option.id %>" required>
-        <label for="option<%= option.id %>"><%= option.content %></label><br>
-      <% end %>
-      <input type="radio" id="hidden_option<%= question.id %>" name="question_<%= question.id %>" value="" style="display: none;" required>
-      <hr>
+  <form id="test-form" action="/sections/<%= @section.id %>/test" method="POST">
+    <% @questions.each_with_index do |question, index| %>
+      <div id="question-<%= index + 1 %>" class="question-container" style="<%= index > 0 ? 'display:none;' : '' %>">
+        <p><%= question.content %></p>
+        <% question.options.each do |option| %>
+          <input type="radio" id="option<%= option.id %>" name="question_<%= question.id %>" value="<%= option.id %>" required>
+          <label for="option<%= option.id %>"><%= option.content %></label><br>
+        <% end %>
+      </div>
     <% end %>
-    <button type="submit">Finalizar Test</button>
+    <button type="button" id="prev-button" style="display:none;">Anterior</button>
+    <button type="button" id="next-button">Siguiente</button>
+    <button type="submit" id="submit-button" style="display:none;">Finalizar Test</button>
   </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const totalQuestions = <%= @questions.count %>;
+      let currentQuestion = 1;
+
+      const prevButton = document.getElementById('prev-button');
+      const nextButton = document.getElementById('next-button');
+      const submitButton = document.getElementById('submit-button');
+
+      function showQuestion(index) {
+        document.querySelectorAll('.question-container').forEach((container, i) => {
+          container.style.display = (i === index - 1) ? 'block' : 'none';
+        });
+        prevButton.style.display = (index === 1) ? 'none' : 'inline-block';
+        nextButton.style.display = (index === totalQuestions) ? 'none' : 'inline-block';
+        submitButton.style.display = (index === totalQuestions) ? 'inline-block' : 'none';
+      }
+
+      prevButton.addEventListener('click', function() {
+        if (currentQuestion > 1) {
+          currentQuestion--;
+          showQuestion(currentQuestion);
+        }
+      });
+
+      nextButton.addEventListener('click', function() {
+        if (currentQuestion < totalQuestions) {
+          currentQuestion++;
+          showQuestion(currentQuestion);
+        }
+      });
+
+      showQuestion(currentQuestion);
+    });
+  </script>
 </body>
 </html>
-
 
 
 

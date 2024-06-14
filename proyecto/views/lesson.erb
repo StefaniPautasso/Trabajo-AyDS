@@ -3,16 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title><%= @lesson.title %></title>
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <h1><%= @lesson.title %></h1>
-  <p><%= @lesson.content %></p>
-  <% if @lesson != @lesson.section.lessons.last %>
-    <a href="/sections/<%= @section.id %>/lessons/<%= @lesson.id + 1 %>">Siguiente</a>
-  <% else %>
-    <a href="/sections/<%= @section.id %>/test">Comenzar Test</a>
-  <% end %>
+  <div id="lesson">
+    <div class="container">
+      <h1><%= @lesson.title %></h1>
+      
+      <!-- Mostrar contenido de la lección -->
+      <div class="lesson-content">
+        <div class="lesson-text">
+          <%= @lesson.content %>
+        </div>
+      </div>
+
+      <!-- Enlace para siguiente lección -->
+      <% if @lesson != @lesson.section.lessons.last %>
+        <a href="/sections/<%= @section.id %>/lessons/<%= @lesson.id + 1 %>" class="next-link">Siguiente</a>
+      <% else %>
+        <a href="/sections/<%= @section.id %>/test" class="start-test-link">Comenzar Test</a>
+      <% end %>
+    </div>
+  </div>
 </body>
 </html>
-
