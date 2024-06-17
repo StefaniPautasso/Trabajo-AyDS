@@ -3,4 +3,5 @@ class Option < ActiveRecord::Base
   has_many :answers
   
   validates :content, presence: true
+  validates :question, presence: true
 end
