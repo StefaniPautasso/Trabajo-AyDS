@@ -1,5 +1,3 @@
-# spec/models/section_spec.rb
-
 require 'spec_helper'
 require './models/section'
 

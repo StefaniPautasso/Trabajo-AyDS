@@ -13,7 +13,19 @@
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+ENV['RACK_ENV'] = 'test'
+
+require 'rack/test'
+require './server.rb'
+require 'rspec'
+require 'active_record'
+
 RSpec.configure do |config|
+  
+  config.include Rack::Test::Methods
+  def app
+    App
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -95,4 +107,17 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.before(:suite) do
+    ActiveRecord::Base.establish_connection(:test)
+    ActiveRecord::Migration.maintain_test_schema!
+  end
+
+  config.before(:each) do
+    ActiveRecord::Base.connection.begin_transaction(joinable: false) #manejar transacciones por separado
+  end
+
+  config.after(:each) do
+    ActiveRecord::Base.connection.rollback_transaction
+  end
+  
 end
