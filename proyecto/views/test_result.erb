@@ -6,12 +6,10 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <div class="result-container">
-    <h1>Resultado del Test</h1>
-    <p><%= @message %></p>
-    <p class="score">Puntaje: <%= @score %>/<%= @total_questions %> (<%= @percentage %>%)</p>
-    <a href="/sections" class="return-link">Volver a las Secciones</a>
-  </div>
+  <h1>Resultado del Test</h1>
+  <p><%= @message %></p>
+  <p>Preguntas contestadas correctamente: <%= @score %> / <%= @total_questions %> Porcentaje Obtenido: (<%= @percentage %>)%</p>
+  <a href="/sections">Volver a las Secciones</a>
 </body>
 </html>
 

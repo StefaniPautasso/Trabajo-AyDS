@@ -88,6 +88,7 @@ class App < Sinatra::Application
     
   get '/profile' do
       @user = current_user
+      @progress = Progress.includes(test: { questions: { options: :answers } }).where(user_id: @user.id)
       erb :profile
   end
 
@@ -103,34 +104,34 @@ class App < Sinatra::Application
     @test = @section.test
     @questions = @test.questions
 
+    responses = []
     correct_answers = 0
-    total_questions = @questions.count
 
     @questions.each do |question|
       selected_option_id = params["question_#{question.id}"]
       if selected_option_id
         selected_option = Option.find(selected_option_id)
         correct_answers += 1 if selected_option.correct
+        responses << { question_id: question.id, option_id: selected_option.id }
       end
     end
 
-    score = (correct_answers.to_f / total_questions * 100).round(2)
-    if session[:user_id]
-      user_id = session[:user_id]
-      progress = Progress.find_or_create_by(user_id: user_id, test_id: @test.id)
-      progress.update(score: score)
+    if current_user
+      Answer.save_user_responses(current_user.id, @test, responses)
+      progress = Progress.find_or_create_by(user_id: current_user.id, test_id: @test.id)
+      progress.calculate_score(@test)
     end
 
-    @message = score >= 50 ? "¡Has aprobado!" : "No has aprobado. Inténtalo de nuevo."
+    @message = progress.score >= 50 ? "¡Has aprobado!" : "No has aprobado. Inténtalo de nuevo."
     @score = correct_answers
-    @total_questions = total_questions
-    @percentage = score
+    @total_questions = @questions.count
+    @percentage = progress.score
     erb :test_result
   end
 
   get '/progress' do
     @user = current_user
-    @progress = Progress.includes(test: :section).where(user_id: @user.id)        
+    @progress = Progress.includes(test: { questions: { options: :answers } }).where(user_id: @user.id)
     erb :progress
   end
     

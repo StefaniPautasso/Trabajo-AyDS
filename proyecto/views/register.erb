@@ -97,16 +97,15 @@
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
       </div>
-        
-			<% if error_messages.any? %>
-				<p style="color: red;"><%= @error %></p>
-				<ul>
-				  <% error_messages.each do |error| %>
-				    <li><%= error %></li>
-				  <% end %>
-				</ul>
-			<% end %>
-	</div>
+      <% error_messages ||= [] %>
+      <% if error_messages.any? %>
+        <p style="color: red;"><%= @error %></p>
+        <ul>
+          <% error_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
       
       <button type="submit">Registrarse</button>
     </form>
@@ -122,6 +121,3 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-

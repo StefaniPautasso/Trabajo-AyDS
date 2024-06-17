@@ -7,28 +7,51 @@
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <div class="progress-container">
-    <h1>Progreso del Usuario</h1>
-    <% if @progress.any? %>
-      <h2>Secciones Completadas:</h2>
-      <ul class="progress-list">
-        <% @progress.each do |user_section| %>
-          <li class="progress-item">
-            <%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%
-          </li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>Aún no has completado ninguna sección.</p>
-    <% end %>
-    <a href="/menu">Volver al menú</a>
-  </div>
+  <h1>Progreso del Usuario</h1>
+  <% if @progress.any? %>
+    <h2>Secciones Completadas:</h2>
+    <ul>
+      <% @progress.each do |user_section| %>
+        <li>
+          <%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%
+          <a href="#" onclick="toggleVisibility('<%= user_section.test.id %>')">Ver respuestas del test</a>
+          <div id="test-<%= user_section.test.id %>" style="display: none; margin-top: 10px;">
+            <h3>Respuestas del Test: <%= user_section.test.title %></h3>
+            <% user_section.test.questions.each do |question| %>
+              <div>
+                <p><strong>Pregunta:</strong> <%= question.content %></p>
+                <% user_answer = question.answers.find_by(user_id: @user.id) %>
+                <% if user_answer %>
+                  <p><strong>Tu respuesta:</strong> <%= user_answer.option.content %></p>
+                  <% correct_option = question.options.find(&:correct) %>
+                  <p><strong>Respuesta correcta:</strong> <%= correct_option.content %></p>
+                <% else %>
+                  <p>No hay respuesta registrada.</p>
+                <% end %>
+              </div>
+              <hr>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Aún no has completado ninguna sección.</p>
+  <% end %>
+
+  <a href="/menu">Volver al menú</a>
+
+  <script>
+    function toggleVisibility(testId) {
+      var element = document.getElementById('test-' + testId);
+      if (element.style.display === 'none') {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
 
 
