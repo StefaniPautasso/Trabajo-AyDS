@@ -1,4 +1,4 @@
-Product Backlog 
+Historias de Usuario
 
 -Registrarse en el sistema, creando una cuenta usuario y completando los datos que correspondan (nombre y contraseña)
 
