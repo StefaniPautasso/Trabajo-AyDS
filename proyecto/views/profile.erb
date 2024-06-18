@@ -22,7 +22,7 @@
             position: relative;
         }
         .profile-container {
-            max-width: 600px;
+            max-width: 700px;
             padding: 50px;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
@@ -37,7 +37,7 @@
             margin-bottom: 10px; 
         }
         .welcome-message {
-            font-size: 2.5rem; 
+            font-size: 4rem; 
             margin-bottom: 30px; 
         }
         .btn-custom {
@@ -69,16 +69,18 @@
             text-align: left;
         }
         .completed-sections h2 {
-            font-size: 1.75rem; 
+            font-size: 1.8rem; 
             margin-bottom: 15px;
+            color: #000000;
         }
         .completed-sections ul {
             list-style-type: none;
             padding-left: 0;
         }
         .completed-sections li {
-            font-size: 1rem; 
+            font-size: 1.25rem;
             margin-bottom: 10px;
+            color: #000000;
             position: relative; 
         }
         .star {
@@ -105,20 +107,20 @@
     <h1>Mi Perfil</h1>
     <p class="welcome-message">Bienvenido <%= @user.name %></p>
     
-		<% if @progress.any? %>
-				<div class="completed-sections">
-				    <h2>Secciones Completadas y Aprobadas:</h2>
-				    <ul>
-				        <% @progress.each do |user_test| %>
-				            <% if user_test.score && user_test.score > 50 %> <!-- Verifica si hay puntaje y si es mayor a 50 -->
-				                <li><%= user_test.test.section.title %> <span class="star">&#9733;</span></li>
-				            <% end %>
-				        <% end %>
-				    </ul>
-				</div>
-		<% else %>
-				<p>Aún no has completado ninguna sección.</p>
-		<% end %>
+    <% if @progress.any? %>
+        <div class="completed-sections">
+            <h2>Secciones Aprobadas:</h2>
+            <ul>
+                <% @progress.each do |user_test| %>
+                    <% if user_test.score && user_test.score > 50 %> 
+                        <li><%= user_test.test.section.title %> <span class="star">&#9733;</span></li>
+                    <% end %>
+                <% end %>
+            </ul>
+        </div>
+    <% else %>
+        <p>Aún no has completado ninguna sección.</p>
+    <% end %>
     
 </div>
 
@@ -128,3 +130,4 @@
 
 </body>
 </html>
+

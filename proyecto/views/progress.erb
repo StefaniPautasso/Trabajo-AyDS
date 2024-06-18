@@ -23,9 +23,11 @@
         }
         .progress-container {
             max-width: 600px;
+            max-height: 80vh; 
             padding: 50px;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
+            overflow-y: auto; 
         }
         h1 {
             font-family: 'Dancing Script', cursive;
@@ -34,7 +36,7 @@
             color: #dc3545;
         }
         .progress-container p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-bottom: 30px;
         }
         .btn-custom {
@@ -74,6 +76,35 @@
             font-size: 1.25rem;
             margin-bottom: 10px;
         }
+        .btn-view-answers {
+            margin-top: 10px;
+            background-color: #dc3545;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .btn-view-answers:hover {
+            background-color: #f76c6c;
+        }
+        .test-answers {
+            font-size: 1rem; 
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .test-answers h3 {
+            font-size: 1.5rem;
+            color: #dc3545;
+        }
+        .test-answers p {
+            margin-bottom: 5px;
+        }
+        .test-answers hr {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -83,14 +114,16 @@
 
     <div class="progress-container">
         <h1>Progreso del Usuario</h1>
-  <% if @progress.any? %>
-    <h2>Secciones Completadas:</h2>
-    <ul>
-      <% @progress.each do |user_section| %>
-        <li>
-          <%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%
-          <a href="#" onclick="toggleVisibility('<%= user_section.test.id %>')">Ver respuestas del test</a>
-          <div id="test-<%= user_section.test.id %>" style="display: none; margin-top: 10px;">
+        <div class="progress-list">
+            <% if @progress.any? %>
+                <h2>Secciones Completadas <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 5l7 7 7-7H1z"/>
+                </svg></h2>
+                <ul id="completed-list">
+                    <% @progress.each do |user_section| %>
+                        <li><%= user_section.test.section.title %> - Puntaje: <%= user_section.score %>%
+                <button class="btn-view-answers" onclick="toggleVisibility('<%= user_section.test.id %>')">Ver respuestas del test</button>
+          <div id="test-<%= user_section.test.id %>" class="test-answers" style="display: none;">
             <h3>Respuestas del Test: <%= user_section.test.title %></h3>
             <% user_section.test.questions.each do |question| %>
               <div>
@@ -108,11 +141,13 @@
             <% end %>
           </div>
         </li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>Aún no has completado ninguna sección.</p>
-  <% end %>
+                    <% end %>
+                </ul>
+            <% else %>
+                <p>Aún no has completado ninguna sección.</p>
+            <% end %>
+        </div>
+    </div>
 
     <a href="/logout" class="btn btn-custom btn-logout">
         <i class="fas fa-sign-out-alt"></i> Cerrar sesión
@@ -123,14 +158,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
     function toggleVisibility(testId) {
-		    var element = document.getElementById('test-' + testId);
-		    if (element.style.display === 'none') {
-		      element.style.display = 'block';
-		    } else {
-		      element.style.display = 'none';
-		    }
-		  }
-  	</script>
+        var element = document.getElementById('test-' + testId);
+        if (element.style.display === 'none') {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      }
+    </script>
 </body>
 </html>
 
