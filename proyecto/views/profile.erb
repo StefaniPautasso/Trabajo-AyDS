@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -12,7 +13,7 @@
             background: url('/images/background.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
-            color: #dc3545; /* Rojo */
+            color: #dc3545; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,7 +34,11 @@
         }
         .profile-container p {
             font-size: 1.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 10px; 
+        }
+        .welcome-message {
+            font-size: 2.5rem; 
+            margin-bottom: 30px; 
         }
         .btn-custom {
             margin: 5px;
@@ -41,16 +46,19 @@
             font-size: 1.25rem;
             font-weight: bold;
             transition: background-color 0.3s ease, color 0.3s ease;
+            position: absolute; 
+            top: 20px; 
         }
         .btn-back {
             background-color: #dc3545;
-            position: absolute;
-            top: 20px;
-            left: 20px;
+            left: 20px; 
         }
-        .btn-back:hover {
+        .btn-logout {
+            background-color: #dc3545;
+            right: 20px; 
+        }
+        .btn-back:hover, .btn-logout:hover {
             background-color: #f76c6c;
-            color: white;
         }
         .img-thumbnail {
             max-width: 150px;
@@ -59,72 +67,64 @@
         .completed-sections {
             margin-top: 30px;
             text-align: left;
-            display: none; /* Ocultar inicialmente */
         }
         .completed-sections h2 {
-            font-size: 2rem;
+            font-size: 1.75rem; 
             margin-bottom: 15px;
-            cursor: pointer; /* Cambia el cursor a mano */
         }
         .completed-sections ul {
             list-style-type: none;
             padding-left: 0;
         }
         .completed-sections li {
-            font-size: 1.25rem;
+            font-size: 1rem; 
             margin-bottom: 10px;
+            position: relative; 
+        }
+        .star {
+            color: gold; 
+            position: absolute;
+            top: 50%; 
+            left: -20px; 
+            transform: translateY(-50%); 
         }
     </style>
 </head>
 <body>
-    <!-- Botón de volver al menú -->
     <a href="/menu" class="btn btn-custom btn-back">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H3.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708.708L3.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-        </svg>
-        Volver al menú
+        <i class="fas fa-arrow-left"></i> Volver al menú
     </a>
 
-    <div class="profile-container">
-        <!-- Imagen de perfil -->
-        <img src="/images/background2.png alt="Foto de perfil" class="img-thumbnail">
-        
-        <h1>Mi Perfil</h1>
-        <p>Bienvenido, <%= @user.name %></p>
-        
-        <!-- Botón y secciones completadas -->
-        <div class="completed-sections">
-            <h2 onclick="toggleSections()" id="toggle-btn">Secciones Completadas <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 5l7 7 7-7H1z"/>
-            </svg></h2>
-            <ul id="completed-list">
-                <% @progress.each do |user_section| %>
-                    <li><%= user_section.test.section.title %></li>
-                <% end %>
-            </ul>
-            <% if @progress.empty? %>
-                <p>No has completado ninguna sección aún.</p>
-            <% end %>
-        </div>
-        
-    </div>
+<a href="/logout" class="btn btn-custom btn-logout">
+    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+</a>
 
-    <script>
-        function toggleSections() {
-            var sections = document.querySelector('.completed-sections');
-            var btn = document.getElementById('toggle-btn');
-            sections.classList.toggle('show');
-            if (sections.classList.contains('show')) {
-                btn.innerHTML = 'Secciones Completadas <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 11l7-7 7 7H1z"/></svg>';
-            } else {
-                btn.innerHTML = 'Secciones Completadas <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 5l7 7 7-7H1z"/></svg>';
-            }
-        }
-    </script>
+<div class="profile-container">
+    <img src="/images/profile.png" alt="Foto de perfil" class="img-thumbnail">
+    
+    <h1>Mi Perfil</h1>
+    <p class="welcome-message">Bienvenido <%= @user.name %></p>
+    
+		<% if @progress.any? %>
+				<div class="completed-sections">
+				    <h2>Secciones Completadas y Aprobadas:</h2>
+				    <ul>
+				        <% @progress.each do |user_test| %>
+				            <% if user_test.score && user_test.score > 50 %> <!-- Verifica si hay puntaje y si es mayor a 50 -->
+				                <li><%= user_test.test.section.title %> <span class="star">&#9733;</span></li>
+				            <% end %>
+				        <% end %>
+				    </ul>
+				</div>
+		<% else %>
+				<p>Aún no has completado ninguna sección.</p>
+		<% end %>
+    
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-

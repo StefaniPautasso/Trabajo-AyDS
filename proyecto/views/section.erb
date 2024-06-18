@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title><%= @section.title %></title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,7 +12,7 @@
       background: url('/images/background.png') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
-      color: #ffffff; /* Letra blanca */
+      color: #ffffff; 
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -21,83 +21,80 @@
       text-align: center;
     }
     .container {
-      width: 80%; /* Ancho del contenedor principal */
-      max-width: 800px; /* Máximo ancho del contenedor principal */
+      width: 80%; 
+      max-width: 800px; 
       padding: 20px;
-      background: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+      background: rgba(255, 255, 255, 0.7); 
       border-radius: 10px;
-      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1); /* Sombra suave */
-      text-align: center; /* Alineación del contenido centrado */
-      margin-top: 20px; /* Margen superior */
-      height: 60%; /* Altura del contenedor reducida */
-      overflow-y: auto; /* Scroll vertical si es necesario */
+      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1); 
+      text-align: center; 
+      height: 60%; 
+      overflow-y: auto; 
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Alineación del contenido al inicio */
-      gap: 20px; /* Espacio entre elementos internos */
+      justify-content: center;  
+      gap: 20px; 
     }
     h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 3.5rem; /* Tamaño de la fuente aumentado */
+      font-size: 3.5rem; 
       margin-bottom: 20px;
-      text-transform: capitalize; /* Texto con la primera letra en mayúscula */
-      color: #dc3545; /* Rojo */
+      text-transform: capitalize; 
+      color: #dc3545; 
     }
     ul {
-      list-style-type: none; /* Quitamos los puntos de la lista */
+      list-style-type: none; 
       padding: 0;
       margin: 0;
-      text-align: center; /* Alineación del texto centrado */
+      text-align: center; 
     }
     ul li {
-      margin-bottom: 15px; /* Separación aumentada entre elementos de la lista */
+      margin-bottom: 15px;
     }
     ul li a {
       display: block;
-      padding: 12px 20px; /* Aumento del padding para hacer los recuadros más grandes */
-      background-color: #dc3545; /* Fondo rojo */
-      border: 2px solid #dc3545; /* Borde rojo */
-      color: #ffffff; /* Letra blanca */
+      padding: 12px 20px; 
+      background-color: transparent;
+      border: 2px solid #dc3545; 
+      color: #dc3545; 
       text-decoration: none;
-      font-size: 1.2rem; /* Tamaño de la fuente reducido */
+      font-size: 1.5rem;
       transition: all 0.3s ease;
       border-radius: 5px;
+      width: 100%; 
+      box-sizing: border-box; 
     }
     ul li a:hover {
-      background-color: #ffffff; /* Fondo blanco al hacer hover */
-      color: #dc3545; /* Letra roja al hacer hover */
-      text-decoration: none; /* Quitamos el subrayado al hacer hover */
+      background-color: #dc3545; 
+      color: #ffffff; 
+      text-decoration: none; 
     }
-    .back-link {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      text-decoration: none;
-      color: #dc3545; /* Rojo */
-      transition: color 0.3s ease;
-      font-size: 1.2rem; /* Tamaño más grande */
+
+    .btn-custom {
+      margin: 5px;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: absolute; 
+      top: 20px; 
     }
-    .back-link:hover {
-      text-decoration: underline; /* Subrayado al hacer hover */
-      color: #ffffff; /* Letra blanca al hacer hover */
+    .btn-back {
+      background-color: #dc3545;
+      left: 20px; 
     }
-    .logout-link {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      text-decoration: none;
-      color: #dc3545; /* Rojo */
-      transition: color 0.3s ease;
-      font-size: 1.2rem; /* Tamaño más grande */
+    .btn-logout {
+      background-color: #dc3545;
+      right: 20px; 
     }
-    .logout-link:hover {
-      text-decoration: underline; /* Subrayado al hacer hover */
-      color: #ffffff; /* Letra blanca al hacer hover */
+    .btn-back:hover, .btn-logout:hover {
+      background-color: #f76c6c;
     }
+
     .lesson-list {
-      width: 70%; /* Ancho reducido para la lista de lecciones */
-      margin: 0 auto; /* Centrado horizontal */
-      padding: 0; /* Quitamos el padding para ajustar mejor */
+      width: 70%; 
+      margin: 0 auto; 
+      padding: 0; 
     }
     .lesson-item {
       margin-bottom: 10px;
@@ -105,7 +102,10 @@
   </style>
 </head>
 <body>
-  <a href="/menu" class="back-link"><i class="fas fa-arrow-left"></i> Volver al menú</a>
+  <a href="/menu" class="btn btn-custom btn-back">
+    <i class="fas fa-arrow-left"></i> Volver al menú
+  </a>
+  
   <div class="container">
     <h1><%= @section.title %></h1>
     <ul class="lesson-list">
@@ -114,11 +114,15 @@
       <% end %>
     </ul>
   </div>
-  <a href="/logout" class="logout-link">Cerrar sesión</a>
+  
+  <a href="/logout" class="btn btn-custom btn-logout">
+    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+  </a>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 

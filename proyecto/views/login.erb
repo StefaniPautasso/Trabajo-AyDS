@@ -12,7 +12,7 @@
       background: url('/images/background.png') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
-      color: #dc3545; /* Rojo */
+      color: #dc3545; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -21,44 +21,44 @@
     .container {
       max-width: 600px;
       padding: 50px;
-      background: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+      background: rgba(255, 255, 255, 0.7); 
       border-radius: 10px;
     }
     h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 4rem; /* Tamaño de la fuente aumentado */
+      font-size: 4rem; 
       margin-bottom: 20px;
-      text-transform: capitalize; /* Texto con la primera letra en mayúscula */
+      text-transform: capitalize; 
     }
     .alert-success {
-      background-color: #28a745; /* Verde */
+      background-color: #28a745; 
       color: white;
       padding: 10px;
       border-radius: 5px;
       margin-bottom: 20px;
     }
     .login-form {
-      text-align: left; /* Formulario alineado a la izquierda */
+      text-align: left; 
       margin-bottom: 20px;
     }
     .login-form label {
       font-weight: bold;
-      display: block; /* Para que las etiquetas ocupen una línea completa */
-      margin-bottom: 5px; /* Espacio entre etiquetas */
+      display: block; 
+      margin-bottom: 5px; 
     }
     .login-form input[type="text"],
     .login-form input[type="password"] {
-      width: calc(100% - 20px); /* Ancho del campo menos el padding */
+      width: calc(100% - 20px); 
       padding: 10px;
       margin-bottom: 20px;
-      border: 1px solid #ced4da; /* Gris claro */
+      border: 1px solid #ced4da; 
       border-radius: 5px;
       box-sizing: border-box;
-      display: inline-block; /* Mostrar en línea */
-      vertical-align: middle; /* Alinear verticalmente */
+      display: inline-block; 
+      vertical-align: middle; 
     }
     .login-form button {
-      background-color: #dc3545; /* Rojo */
+      background-color: #dc3545; 
       color: white;
       padding: 10px 20px;
       border: none;
@@ -66,23 +66,23 @@
       font-size: 1.25rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      display: block; /* Botón ocupa una línea completa */
-      margin: 0 auto; /* Centrar botón */
+      display: block; 
+      margin: 0 auto; 
     }
     .login-form button:hover {
-      background-color: #f76c6c; /* Rojo más claro */
+      background-color: #f76c6c; 
     }
     .register-link {
       font-size: 1.1rem;
-      margin-top: 20px; /* Espacio arriba del enlace de registro */
-      text-align: center; /* Alinear al centro */
+      margin-top: 20px; 
+      text-align: center; 
     }
     .register-link p {
-      display: inline-block; /* Para que el texto y el enlace estén en línea */
-      margin-right: 10px; /* Espacio entre la pregunta y el enlace */
+      display: inline-block; 
+      margin-right: 10px;
     }
     .register-link a {
-      color: #dc3545; /* Rojo de tono medio */
+      color: #dc3545; 
       text-decoration: none;
       font-weight: bold;
     }
@@ -93,8 +93,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- Imagen derecha eliminada para mantener la simplicidad -->
-    <h1>Bienvenido</h1> <!-- Título ajustado según tus indicaciones -->
+    <h1>Bienvenido</h1> 
     <% if params[:registration_success] == "true" %>
       <div class="alert alert-success" role="alert">
         Usuario creado con éxito. Por favor, inicie sesión.

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,7 +13,7 @@
       background: url('/images/background.png') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
-      color: #ffffff; /* Letra blanca */
+      color: #ffffff; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,59 +23,65 @@
     .container {
       max-width: 600px;
       padding: 50px;
-      background: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+      background: rgba(255, 255, 255, 0.7); 
       border-radius: 10px;
-      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1); /* Sombra suave */
-      text-align: center; /* Alineación del contenido centrado */
+      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1); 
+      text-align: center; 
     }
     h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 4rem; /* Tamaño de la fuente aumentado */
+      font-size: 4rem; 
       margin-bottom: 20px;
-      text-transform: capitalize; /* Texto con la primera letra en mayúscula */
-      color: #dc3545; /* Rojo */
+      text-transform: capitalize; 
+      color: #dc3545; 
     }
     ul {
-      list-style-type: none; /* Quitamos los puntos de la lista */
+      list-style-type: none; 
       padding: 0;
       margin-top: 20px;
-      text-align: center; /* Alineación del texto centrado */
+      text-align: center; 
     }
     ul li {
       margin-bottom: 10px;
     }
     ul li a {
       display: block;
-      padding: 15px 20px; /* Aumento del padding para hacer los recuadros más largos */
+      padding: 15px 20px; 
       background-color: transparent;
-      border: 2px solid #dc3545; /* Borde rojo */
-      color: #dc3545; /* Rojo */
+      border: 2px solid #dc3545; 
+      color: #dc3545; 
       text-decoration: none;
       font-size: 1.5rem;
       transition: all 0.3s ease;
       border-radius: 5px;
-      width: 100%; /* Asegura que todos los enlaces ocupen el 100% del ancho disponible */
-      box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+      width: 100%; 
+      box-sizing: border-box; 
     }
     ul li a:hover {
-      background-color: #dc3545; /* Fondo rojo al hacer hover */
-      color: #ffffff; /* Letra blanca al hacer hover */
-      text-decoration: none; /* Quitamos el subrayado al hacer hover */
+      background-color: #dc3545; 
+      color: #ffffff; 
+      text-decoration: none; 
     }
-    .logout-link {
-      display: inline-block; /* Para que el enlace de cerrar sesión ocupe una línea completa */
-      margin-top: 20px;
-      text-align: center;
-      color: #dc3545; /* Rojo */
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold; /* Texto en negrita */
-      transition: color 0.3s ease; /* Transición para el color al hacer hover */
+
+    .btn-custom {
+      margin: 5px;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: absolute; 
+      top: 20px; 
     }
-    .logout-link:hover {
-      color: #dc3545; /* Mantener el color rojo al hacer hover */
-      text-decoration: underline; /* Subrayado al hacer hover */
+
+    .btn-logout {
+      background-color: #dc3545;
+      right: 20px; 
     }
+    
+    .btn-logout:hover {
+      background-color: #f76c6c;
+    }
+
   </style>
 </head>
 <body>
@@ -85,7 +92,9 @@
       <li><a href="/sections">Comenzar</a></li>
       <li><a href="/progress">Mi Progreso</a></li>
     </ul>
-    <a href="/logout" class="logout-link">Cerrar sesión</a>
+    <a href="/logout" class="btn btn-custom btn-logout">
+      <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+    </a>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

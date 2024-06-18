@@ -1,13 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progreso del Usuario</title>
-  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progreso del Usuario</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background: url('/images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            color: #000000; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            position: relative;
+        }
+        .progress-container {
+            max-width: 600px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #dc3545;
+        }
+        .progress-container p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            margin: 5px;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: absolute; 
+            top: 20px; 
+        }
+        .btn-back {
+            background-color: #dc3545;
+            left: 20px; 
+        }
+        .btn-logout {
+            background-color: #dc3545;
+            right: 20px; 
+        }
+        .btn-back:hover, .btn-logout:hover {
+            background-color: #f76c6c;
+        }
+        .progress-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .progress-list h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #dc3545;
+        }
+        .progress-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .progress-list li {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Progreso del Usuario</h1>
+    <a href="/menu" class="btn btn-custom btn-back">
+        <i class="fas fa-arrow-left"></i> Volver al menú
+    </a>
+
+    <div class="progress-container">
+        <h1>Progreso del Usuario</h1>
   <% if @progress.any? %>
     <h2>Secciones Completadas:</h2>
     <ul>
@@ -39,19 +114,23 @@
     <p>Aún no has completado ninguna sección.</p>
   <% end %>
 
-  <a href="/menu">Volver al menú</a>
+    <a href="/logout" class="btn btn-custom btn-logout">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+    </a>
 
-  <script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
     function toggleVisibility(testId) {
-      var element = document.getElementById('test-' + testId);
-      if (element.style.display === 'none') {
-        element.style.display = 'block';
-      } else {
-        element.style.display = 'none';
-      }
-    }
-  </script>
+		    var element = document.getElementById('test-' + testId);
+		    if (element.style.display === 'none') {
+		      element.style.display = 'block';
+		    } else {
+		      element.style.display = 'none';
+		    }
+		  }
+  	</script>
 </body>
 </html>
-
 
