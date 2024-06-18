@@ -17,6 +17,31 @@ RSpec.describe Answer, type: :model do
   let(:option3) { Option.create(content: 'Option content 1', question: question2, correct: true) }
   let(:option4) { Option.create(content: 'Option content 2', question: question2, correct: false) }
 
+  describe 'validations' do
+    it 'is valid with a user, question and option' do
+      answer = Answer.new(user: user, question: question1, option: option1)
+      expect(answer).to be_valid
+    end
+    
+    it 'is invalid without a user' do
+      answer = Answer.new(user: nil, question: question1, option: option1)
+      expect(answer).to_not be_valid
+      expect(answer.errors[:user]).to include("can't be blank")
+    end
+    
+   it 'is invalid without a question' do
+      answer = Answer.new(user: user, question: nil, option: option1)
+      expect(answer).to_not be_valid
+      expect(answer.errors[:question]).to include("can't be blank")
+    end
+    
+    it 'is invalid without a option' do
+      answer = Answer.new(user: user, question: question1, option: nil)
+      expect(answer).to_not be_valid
+      expect(answer.errors[:option]).to include("can't be blank")
+    end 
+  end
+  
   describe 'associations' do
     it 'belongs to a user' do
       answer = Answer.new(user: user, question: question1, option: option1)
