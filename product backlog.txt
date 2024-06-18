@@ -1,0 +1,63 @@
+Product Backlog 
+
+-Registrarse en el sistema, creando una cuenta usuario y completando los datos que correspondan (nombre y contraseña)
+
+Como un Usuario,
+quiero Registrarme en el sistema
+así Puedo obtener una cuenta para acceder al sistema.
+Criterios de aceptación: 
+	-Se crea un nuevo usuario, si este no existía en el sistema. 
+	-El nombre de usuario no puede contener espacios en blanco y debe ser único. 
+	-La contraseña debe tener una longitud minima de 8 caracteres sin espacios en blanco.
+
+
+-Acceder a la cuenta, mediante el nombre de usuario y contraseña.
+
+Como un Usuario,
+quiero Acceder a mi cuenta
+así Puedo acceder al sistema y aprender sobre primeros auxilios.
+Criterio de aceptación: 
+	-Los datos ingresado deben coincidir con los de un usuario ya existente
+
+
+-Acceder a las diferentes secciones del sistema, las cuales serán de cada tipo de emergencia (Asfixia, Shock, Hemorragias,etc) 
+
+Como un Usuario,
+quiero Acceder a las distintas secciones
+así Puedo elegir el tema que más me interese.
+Criterio de aceptación: 
+	-El usuario puede seleccionar una de las secciones
+
+-Acceder a las diferentes lecciones de cada sección, las cuales serán de Descripción, Acción y Prevención.
+
+Como un Usuario,
+quiero Acceder a las lecciones 
+así Puedo aprender sobre el tema elegido.
+Criterio de aceptación: 
+	-El usuario puede seleccionar una de las lecciones y acceder a su contenido
+
+-Acceder a los test de cada sección, respondiendo a las diferentes preguntas marcando la opción correcta.
+
+Como un Usuario,
+quiero Responder a las preguntas a los test
+así Puedo evaluar mi conocimiento en la sección correspondiente.
+Criterio de aceptación: 
+	-El usuario puede seleccionar como correcta una opcion de cada pregunta del test.
+
+
+-Acceder a Mi Progreso.
+
+Como un Usuario,
+quiero Acceder a Mi Progreso 
+así Puedo observar mi avance en las diferentes secciones y los resultados de los test realizados.
+Criterio de aceptación:
+	-El usuario puede ver el puntaje obtenido en cada test realizado por cada sección.
+
+
+-Acceder a Mi Perfil.
+
+Como un Usuario,
+quiero Acceder a Mi Perfil
+así Puedo ver las secciones cuyos tests aprobé.
+Criterio de aceptación:
+	- El usuario puede ver la lista de secciones, cuyos tests aprobó
