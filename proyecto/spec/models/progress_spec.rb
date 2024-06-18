@@ -25,18 +25,34 @@ RSpec.describe Progress, type: :model do
 
   describe 'validations' do
     before do
-      @progress = Progress.new(user: user, test: test)
+      @progress = Progress.new(user: user, test: test, score:0)
     end
-
-    it 'is valid with a score between 0 and 100' do
-      @progress.score = 75
+    
+    it 'is valid with a score, test and user' do
       expect(@progress).to be_valid
     end
-
+    
     it 'is invalid without a score' do
       @progress.score = nil
       expect(@progress).to_not be_valid
       expect(@progress.errors[:score]).to include("can't be blank")
+    end
+    
+    it 'is invalid without a test' do
+      @progress.test = nil
+      expect(@progress).to_not be_valid
+      expect(@progress.errors[:test]).to include("can't be blank")
+    end
+    
+    it 'is invalid without a user' do
+      @progress.user = nil
+      expect(@progress).to_not be_valid
+      expect(@progress.errors[:user]).to include("can't be blank")
+    end
+          
+    it 'is valid with a score between 0 and 100' do
+      @progress.score = 75
+      expect(@progress).to be_valid
     end
 
     it 'is invalid with a score less than 0' do

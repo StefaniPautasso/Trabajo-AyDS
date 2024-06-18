@@ -21,7 +21,7 @@ RSpec.describe Test, type: :model do
       test = Test.new(title: 'TituloTest', section: nil)
       expect(test).to_not be_valid
       expect(test.errors[:section]).to include("can't be blank")
-    end
+    end    
   end
   
   describe 'associations' do   
