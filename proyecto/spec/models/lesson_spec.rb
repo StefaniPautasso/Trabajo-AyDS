@@ -31,6 +31,12 @@ RSpec.describe Lesson, type: :model do
       expect(@lesson).to_not be_valid
       expect(@lesson.errors[:lesson_type]).to include("can't be blank")
     end
+    
+    it 'is invalid without a section' do
+      @lesson.section = nil
+      expect(@lesson).to_not be_valid
+      expect(@lesson.errors[:section]).to include("can't be blank")
+    end  
   end
 
   describe 'associations' do
