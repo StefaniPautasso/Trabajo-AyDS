@@ -1,7 +1,9 @@
+require 'spec_helper'
 require 'rack/test'
 require './server'
 
 RSpec.describe 'Test Completion', type: :integration do
+  
   before do
     @user = User.create(name: 'testuser', password: 'password123')
     @section = Section.create(title: 'Test Section')
@@ -35,5 +37,6 @@ RSpec.describe 'Test Completion', type: :integration do
     expect(progress).to_not be_nil
     expect(progress.score).to eq(100)
   end
+  
 end
 

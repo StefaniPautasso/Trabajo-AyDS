@@ -1,7 +1,9 @@
+require 'spec_helper'
 require 'rack/test'
 require './server'
 
 RSpec.describe 'User Registration', type: :integration do
+
   it 'registers a new user successfully' do
     post '/register', { name: 'NewUser', password: 'password123' }
     expect(last_response).to be_redirect
@@ -27,6 +29,7 @@ RSpec.describe 'User Registration', type: :integration do
     expect(last_response.body).to include('Name has already been taken')
     expect(User.where(name: 'ExistingUser').count).to eq(1)
   end
+  
 end
 
 
