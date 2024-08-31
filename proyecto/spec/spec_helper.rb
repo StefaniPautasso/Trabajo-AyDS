@@ -15,6 +15,8 @@
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 ENV['RACK_ENV'] = 'test'
 
+require 'simplecov'
+SimpleCov.start
 require 'rack/test'
 require './server.rb'
 require 'rspec'

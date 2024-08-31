@@ -19,7 +19,7 @@ class App < Sinatra::Application
   enable :sessions
     
   before do
-    unless ['/login', '/register', '/'].include?(request.path_info) || current_user
+    unless ['/', '/register', '/login', '/logout'].include?(request.path_info) || current_user
       redirect '/login'
     end
   end
@@ -134,15 +134,11 @@ class App < Sinatra::Application
     @progress = Progress.includes(test: { questions: { options: :answers } }).where(user_id: @user.id)
     erb :progress
   end
-    
-  get '/logout' do
-    session.clear
-    redirect '/welcome'
-  end
-
+   
   post '/logout' do
     session.clear
-    redirect '/welcome'
-  end
+    redirect '/'
+  end  
+
 end
 App.run! if $PROGRAM_NAME == __FILE__
