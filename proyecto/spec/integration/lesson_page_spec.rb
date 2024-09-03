@@ -5,10 +5,6 @@ require './server'
 RSpec.describe 'Lesson Access', type: :integration do
   include Rack::Test::Methods
 
-  def app
-    App.
-  end
-
   before do
     @user = User.create(name: 'testuser', password: 'password123')
     @section = Section.create(title: 'Test Section')
