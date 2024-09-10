@@ -17,24 +17,27 @@ Especificación de Requisitos de Software para Learn 2 Save
   El contexto en el que se sitúa el problema es ante una sociedad que, por lo general, no está tan informada acerca de cómo actuar ante situaciones de emergencia, se busca brindar una herramienta simple, eficaz, accesible y educativa que se encargue de otorgar los conocimientos necesarios para que las personas que la accedan estén preparadas para afrontar dichas situaciones y tengan a su vez un espacio para poder evaluar sus conocimientos.
   
   2.2 Funciones del Producto
-    -Acceso a lecciones.
-    -Acceso y realización de test después de cada sección.
-    -Acceso al perfil del usuario.
-    -Acceso al progreso del usuario.
+    -Lecciones interactivas.
+    -Test evaluativos.
+    -Perfil de usuario.
+    -Seguimiento del progreso.
 
 3. Características del Sistema
 
   Requisitos Funcionales
-    -Crear cuenta en el sistema
-    -Acceder a la cuenta creada
-    -Acceder a las secciones
-    -Acceder a las lecciones de cada sección
-    -Acceder a los test de cada sección
-    -Acceder a Mi Perfil
-    -Acceder a Mi Progreso
+    -Registro de Usuario: Permitir la creación de cuentas nuevas en el sistema.
+    -Inicio de Sesión: Autenticación para usuarios existentes.
+    -Navegación entre Secciones: Facilidad de acceso a diferentes secciones del contenido.
+    -Consultas de Lecciones: Acceso a lecciones detalladas dentro de cada sección.
+    -Realización de Test evaluativos: Permitir completar y enviar test vinculados a cada una de las secciones.
+    -Gestión del Perfil: Acceso y actualización de datos personales y configuraciones de cuenta.
+    -Eliminación de Cuenta por el Usuario: Permitir a los usuarios que eliminen su cuenta y datos asociados de manera autónoma.
+    -Modalidad de Juego por Tiempo: Inclusión de una modalidad de test con límite de tiempo para añadir un desafío adicional.
+    -Visualización del Progreso: Acceso a un resumen detallado del progreso en el aprendizaje, incluyendo desempeño en test y lecciones completadas.
 
 4. Otros Requisitos No Funcionales
     -Interfaz amigable
+    -Interactividad en el proceso de aprendizaje del usuario
     -Accesibilidad
     -Actualización y mantenimiento
 
