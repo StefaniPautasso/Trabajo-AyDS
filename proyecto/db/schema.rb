@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_13_155658) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_11_014704) do
   create_table "answers", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "question_id", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_155658) do
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "timed_mode", default: false
     t.index ["test_id"], name: "index_progresses_on_test_id"
     t.index ["user_id"], name: "index_progresses_on_user_id"
   end
