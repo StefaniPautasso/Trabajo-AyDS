@@ -48,10 +48,20 @@
       background-color: #f76c6c; 
       color: white; 
     }
+    .alert {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="welcome-container">
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+
     <h1>Bienvenido a Learn 2 Save</h1>
     <p>Aprende a cómo actuar en situaciones de emergencias</p>
     <div>
