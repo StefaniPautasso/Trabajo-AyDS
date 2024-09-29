@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú</title>
+  <title>Ranking</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
@@ -35,67 +35,57 @@
       text-transform: capitalize; 
       color: #dc3545; 
     }
-    ul {
-      list-style-type: none; 
-      padding: 0;
+    table {
       margin-top: 20px;
-      text-align: center; 
+      width: 100%;
+      color: #dc3545;
+      border-collapse: collapse;
     }
-    ul li {
-      margin-bottom: 10px;
+    th, td {
+      border: 2px solid #dc3545;
+      padding: 10px;
+      text-align: center;
     }
-    ul li a {
-      display: block;
-      padding: 15px 20px; 
-      background-color: transparent;
-      border: 2px solid #dc3545; 
-      color: #dc3545; 
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-      border-radius: 5px;
-      width: 100%; 
-      box-sizing: border-box; 
+    th {
+      background-color: rgba(220, 53, 69, 0.1);
     }
-    ul li a:hover {
-      background-color: #dc3545; 
-      color: #ffffff; 
-      text-decoration: none; 
-    }
-
-    .btn-custom {
-      margin: 5px;
-      color: white;
-      font-size: 1.25rem;
-      font-weight: bold;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      position: absolute; 
-      top: 20px; 
-    }
-
-    .btn-logout {
+    .btn-back {
+      margin-top: 20px;
       background-color: #dc3545;
-      right: 20px; 
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
     }
-    
-    .btn-logout:hover {
+    .btn-back:hover {
       background-color: #f76c6c;
     }
-
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Menú</h1>
-    <ul>
-      <li><a href="/profile">Mi Perfil</a></li>
-      <li><a href="/sections">Comenzar</a></li>
-      <li><a href="/progress">Mi Progreso</a></li>
-      <li><a href="/ranking">Ranking</a></li> <!-- Nueva opción para acceder al ranking -->
-    </ul>
-    <a href="/logout" class="btn btn-custom btn-logout">
-      <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-    </a>
+    <h1>Ranking de Usuarios</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Posición</th>
+          <th>Usuario</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rankings.each_with_index do |ranking, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= ranking.name %></td>
+            <td><%= ranking.total_score %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <a href="/menu" class="btn btn-back">Volver</a>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -103,4 +93,3 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
