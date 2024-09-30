@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/flash'
 require 'sinatra/activerecord'
 
 set :database_file, './config/database.yml'
@@ -138,6 +139,23 @@ class App < Sinatra::Application
   post '/logout' do
     session.clear
     redirect '/'
+  end
+
+  post '/delete_account' do
+    user = current_user
+    if user
+      if user.mark_as_deleted
+        session.clear
+        flash[:notice] = "Tu cuenta ha sido eliminada. Vuelve pronto!"
+        redirect '/'
+      else
+        flash[:alert] = "No se pudo eliminar la cuenta. Intenta nuevamente."
+        redirect '/profile'
+      end
+    else
+      flash[:alert] = "ERROR, intenta nuevamente."
+      redirect '/profile'
+    end
   end  
 
 end
