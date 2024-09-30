@@ -39,18 +39,25 @@ class App < Sinatra::Application
     erb :login
   end
 
-  post '/login' do
-    name = params[:name]
-    password = params[:password]
-    @user = User.find_by(name: name, password: password)
-    if @user
+post '/login' do
+  name = params[:name]
+  password = params[:password]
+
+  @user = User.find_by(name: name)
+  
+  if @user && @user.password == password
+    if @user.active?
       session[:user_id] = @user.id
       redirect '/menu'
     else
-      @error = "Por favor, verifique si ingresó correctamente los datos."
+      @error = "Esta cuenta ha sido eliminada. No puedes iniciar sesión."
       erb :login
     end
+  else
+    @error = "Por favor, verifique si ingresó correctamente los datos."
+    erb :login
   end
+end
 
   get '/register' do
     erb :register
