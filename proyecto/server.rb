@@ -20,7 +20,7 @@ class App < Sinatra::Application
   enable :sessions
     
   before do
-    unless ['/', '/register', '/login', '/logout'].include?(request.path_info) || current_user
+    unless ['/', '/register', '/login', '/logout', '/welcome'].include?(request.path_info) || current_user
       redirect '/login'
     end
   end
@@ -128,6 +128,9 @@ end
       Answer.save_user_responses(current_user.id, @test, responses)
       progress = Progress.find_or_create_by(user_id: current_user.id, test_id: @test.id)
       progress.calculate_score(@test)
+
+      total_score = Progress.where(user_id: current_user.id).sum(:score)
+      current_user.update(total_score: total_score)
     end
 
     @message = progress.score >= 50 ? "¡Has aprobado!" : "No has aprobado. Inténtalo de nuevo."
@@ -146,6 +149,13 @@ end
   post '/logout' do
     session.clear
     redirect '/'
+  end
+  get '/ranking' do
+    @rankings = User.where(is_deleted: false)
+                    .order(total_score: :desc)
+                    .limit(10)
+  
+    erb :ranking
   end
 
   post '/delete_account' do
