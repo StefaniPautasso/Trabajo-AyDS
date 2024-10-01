@@ -91,11 +91,13 @@
       <li><a href="/profile">Mi Perfil</a></li>
       <li><a href="/sections">Comenzar</a></li>
       <li><a href="/progress">Mi Progreso</a></li>
-      <li><a href="/ranking">Ranking</a></li> <!-- Nueva opción para acceder al ranking -->
+      <li><a href="/ranking">Ranking</a></li>
     </ul>
-    <a href="/logout" class="btn btn-custom btn-logout">
-      <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-    </a>
+    <form action="/logout" method="post" style="display: inline;">
+      <button type="submit" class="btn btn-custom btn-logout">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+      </button>
+    </form>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

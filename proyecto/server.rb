@@ -39,25 +39,25 @@ class App < Sinatra::Application
     erb :login
   end
 
-post '/login' do
-  name = params[:name]
-  password = params[:password]
+  post '/login' do
+    name = params[:name]
+    password = params[:password]
 
-  @user = User.find_by(name: name)
-  
-  if @user && @user.password == password
-    if @user.active?
-      session[:user_id] = @user.id
-      redirect '/menu'
+    @user = User.find_by(name: name)
+    
+    if @user && @user.password == password
+      if @user.active?
+        session[:user_id] = @user.id
+        redirect '/menu'
+      else
+        @error = "Esta cuenta ha sido eliminada. No puedes iniciar sesión."
+        erb :login
+      end
     else
-      @error = "Esta cuenta ha sido eliminada. No puedes iniciar sesión."
+      @error = "Por favor, verifique si ingresó correctamente los datos."
       erb :login
     end
-  else
-    @error = "Por favor, verifique si ingresó correctamente los datos."
-    erb :login
   end
-end
 
   get '/register' do
     erb :register
@@ -104,20 +104,31 @@ end
     @section = Section.find(params[:section_id])
     @test = @section.test
     @questions = @test.questions
-    erb :test
+    
+    @test_mode = session[:test_mode]
+  
+    if @test_mode == 'timed'
+    elsif @test_mode == 'normal'
+    end
+    
+    erb :test 
   end
 
   post '/sections/:section_id/test' do
     @section = Section.find(params[:section_id])
     @test = @section.test
     @questions = @test.questions
+    @test_mode = params[:test_mode]
 
     responses = []
     correct_answers = 0
 
     @questions.each do |question|
       selected_option_id = params["question_#{question.id}"]
-      if selected_option_id
+      
+      if selected_option_id.nil? && @test_mode == 'timed'
+        responses << { question_id: question.id, option_id: nil } 
+      elsif selected_option_id
         selected_option = Option.find(selected_option_id)
         correct_answers += 1 if selected_option.correct
         responses << { question_id: question.id, option_id: selected_option.id }
@@ -137,7 +148,22 @@ end
     @score = correct_answers
     @total_questions = @questions.count
     @percentage = progress.score
-    erb :test_result
+  
+    
+  end
+
+  get '/sections/:id/select_test_mode' do
+    @section = Section.find(params[:id])
+    erb :select_test_mode
+  end
+
+  post '/sections/:section_id/select_test_mode' do
+    @section = Section.find(params[:section_id])
+    @test_mode = params[:test_mode]
+  
+    session[:test_mode] = @test_mode
+  
+    redirect to("/sections/#{@section.id}/test")
   end
 
   get '/progress' do

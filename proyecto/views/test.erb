@@ -97,6 +97,11 @@
       color: #ffffff;
       text-decoration: none;
     }
+    #timer {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #000000;
+    }
   </style>
 </head>
 <body>
@@ -105,6 +110,12 @@
   </a>
   <div class="container">
     <h1>Test de <%= @section.title %></h1>
+    <% if @test_mode == 'timed' %>
+      <p>Modo Cronometrado</p>
+      <div id="timer">Tiempo restante: <span id="time-remaining"></span></div>
+    <% else %>
+      <p>Modo Normal</p>
+    <% end %>
     <% if @error %>
       <p style="color: red;"><%= @error %></p>
     <% end %>
@@ -127,10 +138,12 @@
         <button type="submit" class="btn btn-section" id="submit-button" style="display: none;">Finalizar Test</button>
       </div>
     </form>
+    <form id="logout-form" action="/logout" method="post" style="display: inline;">
+      <button type="submit" class="btn btn-custom btn-logout">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+      </button>
+    </form>
   </div>
-  <a href="/logout" class="btn btn-custom btn-logout">
-    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-  </a>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -143,7 +156,10 @@
       const nextButton = document.getElementById('next-button');
       const submitButton = document.getElementById('submit-button');
       const optionContainers = document.querySelectorAll('.option-container');
-  
+      const timerElement = document.getElementById('time-remaining');
+      
+      let totalTime = 45;
+      
       function showQuestion(index) {
         questions.forEach((question, i) => {
           question.style.display = i === index ? 'block' : 'none';
@@ -181,10 +197,25 @@
         });
       });
 
+      function startTimer() {
+        const countdown = setInterval(function() {
+          let minutes = Math.floor(totalTime / 60);
+          let seconds = totalTime % 60;
+          timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+          if (totalTime <= 0) {
+            clearInterval(countdown);
+            document.getElementById('test-form').submit();
+          }
+          totalTime--;
+        }, 1000);
+      }
+
       showQuestion(currentQuestionIndex);
+      <% if @test_mode == 'timed' %>
+        startTimer();
+      <% end %>
     });
   </script>
 </body>
 </html>
-
-

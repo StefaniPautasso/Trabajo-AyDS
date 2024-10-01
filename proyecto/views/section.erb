@@ -113,11 +113,12 @@
         <li class="lesson-item"><a href="/sections/<%= @section.id %>/lessons/<%= lesson.id %>"><%= lesson.title %></a></li>
       <% end %>
     </ul>
+     <form id="logout-form" action="/logout" method="post" style="display: inline;">
+          <button type="submit" class="btn btn-custom btn-logout">
+              <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+          </button>
+      </form>
   </div>
-  
-  <a href="/logout" class="btn btn-custom btn-logout">
-    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-  </a>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

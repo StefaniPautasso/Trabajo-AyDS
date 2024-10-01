@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= @lesson.title %></title>
+  <title>Selecciona el modo del Test</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
@@ -81,16 +81,6 @@
       color: #ffffff;
       text-decoration: none;
     }
-    .lesson-footer {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-    }
-    .lesson-footer-left {
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
-    }
   </style>
 </head>
 <body>
@@ -98,36 +88,24 @@
     <i class="fas fa-arrow-left"></i> Volver al menú
   </a>
   <div class="container">
-    <h1><%= @lesson.title %></h1>
-    <p><%= @lesson.content %></p>
-    <form id="logout-form" action="/logout" method="post" style="display: inline;">
-      <button type="submit" class="btn btn-custom btn-logout">
-        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+    <h1>Selecciona el modo del Test</h1>
+    <p>¿Cómo deseas realizar este test?</p>
+    <form action="/sections/<%= @section.id %>/select_test_mode" method="post" style="display: inline-block;">
+      <input type="hidden" name="test_mode" value="timed" />
+      <button type="submit" class="btn btn-section">
+        Modo Cronometrado
+      </button>
+    </form>
+    <form action="/sections/<%= @section.id %>/select_test_mode" method="post" style="display: inline-block; margin-left: 10px;">
+      <input type="hidden" name="test_mode" value="normal" />
+      <button type="submit" class="btn btn-section">
+        Modo Normal
       </button>
     </form>
   </div>
   
-  <% if @lesson.id > @section.lessons.first.id %>
-    <a href="/sections/<%= @section.id %>/lessons/<%= @lesson.id - 1 %>" class="btn btn-custom btn-section lesson-footer-left">
-      <i class="fas fa-chevron-left"></i> Anterior
-    </a>
-  <% end %>
-
-  <% if @lesson != @section.lessons.last %>
-    <a href="/sections/<%= @section.id %>/lessons/<%= @lesson.id + 1 %>" class="btn btn-custom btn-section lesson-footer">
-      Siguiente <i class="fas fa-chevron-right"></i>
-    </a>
-  <% else %>
-    <form action="/sections/<%= @section.id %>/select_test_mode" method="get">
-      <button type="submit" class="btn btn-custom btn-section lesson-footer">
-        Comenzar Test
-      </button>
-    </form>
-  <% end %>
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

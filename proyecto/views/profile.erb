@@ -55,7 +55,8 @@
         }
         .btn-logout {
             background-color: #dc3545;
-            right: 20px; 
+            right: 20px;
+            top: 20px;
         }
         .btn-back:hover, .btn-logout:hover {
             background-color: #f76c6c;
@@ -97,10 +98,6 @@
         <i class="fas fa-arrow-left"></i> Volver al menú
     </a>
 
-    <a href="/logout" class="btn btn-custom btn-logout">
-        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-    </a>
-
     <div class="profile-container">
         <img src="/images/profile.png" alt="Foto de perfil" class="img-thumbnail">
         
@@ -122,6 +119,11 @@
             <p>Aún no has completado ninguna sección.</p>
         <% end %>
         
+        <form id="logout-form" action="/logout" method="post" style="display: inline;">
+            <button type="submit" class="btn btn-custom btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+            </button>
+        </form>
         <div class="mt-4">
             <h2>Opciones de cuenta</h2>
             <button id="delete-account" class="btn btn-danger">Eliminar mi cuenta</button>
