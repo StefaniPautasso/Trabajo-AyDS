@@ -148,7 +148,8 @@ class App < Sinatra::Application
     @score = correct_answers
     @total_questions = @questions.count
     @percentage = progress.score
-  
+    
+    erb :test_result
     
   end
 
