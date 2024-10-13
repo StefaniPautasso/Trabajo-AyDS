@@ -29,5 +29,9 @@ class User < ActiveRecord::Base
     top_scores.sum(&:score)
   end
 
+  def admin?
+    self.admin
+  end
+
 end
 

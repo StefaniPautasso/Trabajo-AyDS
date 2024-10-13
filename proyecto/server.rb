@@ -48,7 +48,11 @@ class App < Sinatra::Application
     if @user && @user.password == password
       if @user.active?
         session[:user_id] = @user.id
-        redirect '/menu'
+        if @user.admin?
+          redirect '/menu_admin'
+        else
+          redirect '/menu'
+        end
       else
         @error = "Esta cuenta ha sido eliminada. No puedes iniciar sesión."
         erb :login
@@ -72,6 +76,10 @@ class App < Sinatra::Application
     else
       erb :register, locals: { error_messages: @user.errors.full_messages }
     end
+  end
+
+  get '/menu_admin' do
+    erb :menu_admin
   end
 
   get '/menu' do
