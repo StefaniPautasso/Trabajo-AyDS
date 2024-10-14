@@ -48,7 +48,11 @@ class App < Sinatra::Application
     if @user && @user.password == password
       if @user.active?
         session[:user_id] = @user.id
-        redirect '/menu'
+        if @user.admin?
+          redirect '/menu_admin'
+        else
+          redirect '/menu'
+        end
       else
         @error = "Esta cuenta ha sido eliminada. No puedes iniciar sesión."
         erb :login
@@ -71,6 +75,53 @@ class App < Sinatra::Application
       redirect '/login?registration_success=true'
     else
       erb :register, locals: { error_messages: @user.errors.full_messages }
+    end
+  end
+
+  get '/menu_admin' do
+    erb :menu_admin
+  end
+
+  get '/alta_preguntas' do
+    @tests = Test.all
+    erb :alta_preguntas
+  end
+
+  post '/agregar_pregunta' do
+    test_id = params[:test_id]
+    content = params[:content]
+    options_params = params[:options] 
+    correct_option_index = params[:correct_option].to_i
+
+    test = Test.find_by(id: test_id)
+  
+    unless test
+      @error = "Test no encontrado."
+      @tests = Test.all
+      return erb :alta_preguntas
+    end
+
+    question = Question.new(content: content, test: test)
+  
+    if question.save
+      options_params.each_with_index do |option_content, index|
+        option = Option.new(content: option_content, question: question)
+        option.save
+      end
+
+      correct_option = question.options[correct_option_index]
+      if correct_option
+        correct_option.update(correct: true)
+      else
+        @error = "Opción no válida."
+        erb :alta_preguntas
+      end
+
+      redirect '/menu_admin?success=Pregunta agregada correctamente'
+    else
+      @error = "Hubo un problema al agregar la pregunta."
+      @tests = Test.all
+      erb :alta_preguntas
     end
   end
 
