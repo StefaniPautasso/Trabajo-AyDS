@@ -19,15 +19,30 @@ class App < Sinatra::Application
 
   enable :sessions
     
+  helpers do
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
+  end
+
   before do
     unless ['/', '/register', '/login', '/logout', '/welcome'].include?(request.path_info) || current_user
       redirect '/login'
     end
-  end
     
-  helpers do
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    admin_routes = ['/menu_admin', '/alta_preguntas', '/agregar_pregunta', '/consultas_preguntas']
+    common_user_routes = ['/menu', '/sections', '/sections/:id', '/sections/:section_id/lessons/:id', 'sections/:section_id/test', 'sections/:section_id/select_test_mode', '/profile', '/progress', '/ranking', '/delete_account']
+  
+    if current_user
+      if current_user.admin?
+        if common_user_routes.include?(request.path_info)
+          redirect '/menu_admin'  
+        end
+      else
+        if admin_routes.include?(request.path_info)
+          redirect '/menu'  
+        end
+      end
     end
   end
 
@@ -48,7 +63,11 @@ class App < Sinatra::Application
     if @user && @user.password == password
       if @user.active?
         session[:user_id] = @user.id
-        redirect '/menu'
+        if @user.admin?
+          redirect '/menu_admin'
+        else
+          redirect '/menu'
+        end
       else
         @error = "Esta cuenta ha sido eliminada. No puedes iniciar sesión."
         erb :login
@@ -72,6 +91,70 @@ class App < Sinatra::Application
     else
       erb :register, locals: { error_messages: @user.errors.full_messages }
     end
+  end
+
+  get '/menu_admin' do
+    erb :menu_admin
+  end
+
+  get '/alta_preguntas' do
+    @tests = Test.all
+    erb :alta_preguntas
+  end
+
+  post '/agregar_pregunta' do
+    test_id = params[:test_id]
+    content = params[:content]
+    options_params = params[:options] 
+    correct_option_index = params[:correct_option].to_i
+
+    test = Test.find_by(id: test_id)
+  
+    unless test
+      @error = "Test no encontrado."
+      @tests = Test.all
+      return erb :alta_preguntas
+    end
+
+    question = Question.new(content: content, test: test)
+  
+    if question.save
+      options_params.each_with_index do |option_content, index|
+        option = Option.new(content: option_content, question: question)
+        option.save
+      end
+
+      correct_option = question.options[correct_option_index]
+      if correct_option
+        correct_option.update(correct: true)
+      else
+        @error = "Opción no válida."
+        erb :alta_preguntas
+      end
+
+      redirect '/menu_admin?success=Pregunta agregada correctamente'
+    else
+      @error = "Hubo un problema al agregar la pregunta."
+      @tests = Test.all
+      erb :alta_preguntas
+    end
+  end
+
+  get '/consultas_preguntas' do
+    @correct_answers = Question.joins(answers: :option)
+                                   .where(options: { correct: true }) 
+                                   .group('questions.id, questions.content')
+                                   .order('COUNT(answers.id) DESC')
+                                   .limit(5)
+                                   .count('answers.id') 
+    @incorrect_answers = Question.joins(answers: :option)
+                                .where(options: { correct: false }) 
+                                .group('questions.id, questions.content') 
+                                .order('COUNT(answers.id) DESC') 
+                                .limit(5)
+                                .count('answers.id') 
+
+    erb :consultas_preguntas
   end
 
   get '/menu' do
@@ -153,8 +236,8 @@ class App < Sinatra::Application
     
   end
 
-  get '/sections/:id/select_test_mode' do
-    @section = Section.find(params[:id])
+  get '/sections/:section_id/select_test_mode' do
+    @section = Section.find(params[:section_id])
     erb :select_test_mode
   end
 

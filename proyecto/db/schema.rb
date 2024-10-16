@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_28_001134) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_13_180149) do
   create_table "answers", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "question_id", null: false
@@ -91,6 +91,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_28_001134) do
     t.datetime "updated_at", null: false
     t.boolean "is_deleted", default: false
     t.integer "total_score", default: 0
+    t.boolean "admin", default: false, null: false
   end
 
   add_foreign_key "answers", "options"
