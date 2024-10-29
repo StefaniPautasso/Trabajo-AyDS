@@ -24,25 +24,25 @@ RSpec.describe User, type: :model do
       User.create(name: 'UserTest', password: 'passwordTest')
       user = User.new(name: 'UserTest', password: 'differentPasswordTest')
       expect(user).not_to be_valid
-      expect(user.errors[:name]).to include("has already been taken")
+      expect(user.errors[:name]).to include('has already been taken')
     end
     
     it 'is not valid with a short password' do
       user = User.new(name: 'UserTest', password: 'short')
       expect(user).not_to be_valid
-      expect(user.errors[:password]).to include("La contraseña debe tener por lo menos 8 caracteres")
+      expect(user.errors[:password]).to include('La contraseña debe tener por lo menos 8 caracteres')
     end
     
     it 'is not valid with a password containing spaces' do
       user = User.new(name: 'UserTest', password: 'password with spaces')
       expect(user).not_to be_valid
-      expect(user.errors[:password]).to include("La contraseña no puede contener espacios en blanco")
+      expect(user.errors[:password]).to include('La contraseña no puede contener espacios en blanco')
     end
 
     it 'is not valid with a name containing spaces' do
       user = User.new(name: 'User Test', password: 'passwordTest')
       expect(user).not_to be_valid
-      expect(user.errors[:name]).to include("El nombre de usuario no puede contener espacios en blanco")
+      expect(user.errors[:name]).to include('El nombre de usuario no puede contener espacios en blanco')
     end
   end
 end

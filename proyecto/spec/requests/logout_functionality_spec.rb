@@ -7,7 +7,6 @@ RSpec.describe 'Logout Functionality', type: :request do
     @user = User.new(name: 'UserTest', password: 'passwordTest')
     env 'rack.session', { user_id: @user.id }
   end
-  
   it 'clears the session and redirects to the welcome page' do
     post '/logout'
     expect(last_request.env['rack.session']['user_id']).to be_nil
@@ -15,5 +14,4 @@ RSpec.describe 'Logout Functionality', type: :request do
     follow_redirect!
     expect(last_request.path).to eq('/')
   end
-  
 end
