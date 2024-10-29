@@ -204,7 +204,8 @@ options = [
   { content: 'Utilizar los dedos para presionar alrededor del aguijón.', correct: false, question: '¿Cuál es la mejor forma de extraer un aguijón de una mordedura o picadura de insecto?' },
   { content: 'Rascar con una tarjeta.', correct: true, question: '¿Cuál es la mejor forma de extraer un aguijón de una mordedura o picadura de insecto?' },
   { content: 'Usar pinzas para retirar el aguijón.', correct: false, question: '¿Cuál es la mejor forma de extraer un aguijón de una mordedura o picadura de insecto?' },
-  { content: 'Dejar el aguijón dentro de la piel.', correct: false, question: '¿Cuál es la mejor forma de extraer un aguijón de una mordedura o picadura de insecto?' },
+  { content: 'Dejar el aguijón dentro de la piel.', correct: false, 
+  question: '¿Cuál es la mejor forma de extraer un aguijón de una mordedura o picadura de insecto?' },
 
   { content: 'Contactar a los servicios médicos de emergencia de inmediato.', correct: true, question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o mordedura de insecto?' },
   { content: 'Esperar a ver si los síntomas desaparecen por sí solos.', correct: false, question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o mordedura de insecto?' },
