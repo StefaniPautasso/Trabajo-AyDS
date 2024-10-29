@@ -117,7 +117,7 @@
     <a href="/sections/<%= @section.id %>/lessons/<%= @lesson.id + 1 %>" class="btn btn-custom btn-section lesson-footer">
       Siguiente <i class="fas fa-chevron-right"></i>
     </a>
-  <% else %>
+  <% else %> 
     <form action="/sections/<%= @section.id %>/select_test_mode" method="get">
       <button type="submit" class="btn btn-custom btn-section lesson-footer">
         Comenzar Test
