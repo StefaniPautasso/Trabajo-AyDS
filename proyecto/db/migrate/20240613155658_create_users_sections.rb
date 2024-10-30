@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Modelo de la relación entre usuarios y secciones.
 class CreateUsersSections < ActiveRecord::Migration[7.1]
   def change
     create_table :user_sections do |t|
@@ -6,6 +9,6 @@ class CreateUsersSections < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
-    add_index :user_sections, [:user_id, :section_id], unique: true
+    add_index :user_sections, %i[user_id section_id], unique: true
   end
 end

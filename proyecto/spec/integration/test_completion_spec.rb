@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'rack/test'
 require './server'
 
 RSpec.describe 'Test Completion', type: :integration do
-  
+  include Rack::Test::Methods
+
   before do
     @user = User.create(name: 'testuser', password: 'password123')
     @section = Section.create(title: 'Test Section')
@@ -17,7 +20,6 @@ RSpec.describe 'Test Completion', type: :integration do
   end
 
   it 'updates the user progress after completing a test' do
-  
     post '/login', { name: 'testuser', password: 'password123' }
     expect(last_response.status).to eq(302)
 
@@ -30,13 +32,10 @@ RSpec.describe 'Test Completion', type: :integration do
     }
 
     expect(last_response.status).to eq(200)
-
-    expect(last_response.body).to include("¡Has aprobado!")
+    expect(last_response.body).to include('¡Has aprobado!')
 
     progress = Progress.find_by(user: @user, test: @test)
-    expect(progress).to_not be_nil
+    expect(progress).not_to be_nil
     expect(progress.score).to eq(100)
   end
-  
 end
-

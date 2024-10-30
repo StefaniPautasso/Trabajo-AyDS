@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
+# Modelo de una opción de respuesta.
 class CreateOptions < ActiveRecord::Migration[7.1]
   def change
     create_table :options do |t|
       t.text :content, null: false
-      t.boolean :correct, default: false 
+      t.boolean :correct, default: false
       t.references :question, null: false, foreign_key: true
-
       t.timestamps
     end
   end

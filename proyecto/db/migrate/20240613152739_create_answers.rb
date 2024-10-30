@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Modelo de una respuesta a una pregunta.
 class CreateAnswers < ActiveRecord::Migration[7.1]
   def change
     create_table :answers do |t|

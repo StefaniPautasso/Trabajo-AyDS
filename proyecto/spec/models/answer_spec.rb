@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rubocop:disable Metrics/BlockLength
 require 'spec_helper'
 require './models/answer'
@@ -42,7 +44,6 @@ RSpec.describe Answer, type: :model do
       expect(answer.errors[:option]).to include("can't be blank")
     end
   end
-  
   describe 'associations' do
     it 'belongs to a user' do
       answer = Answer.new(user: user, question: question1, option: option1)

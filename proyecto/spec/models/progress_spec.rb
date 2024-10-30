@@ -9,6 +9,7 @@ require './models/question'
 require './models/option'
 require './models/answer'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe Progress, type: :model do
   let(:user) { User.create(name: 'TestUser', password: 'password123') }
   let(:section) { Section.create(title: 'Test Section') }
@@ -34,19 +35,19 @@ RSpec.describe Progress, type: :model do
 
     it 'is invalid without a score' do
       @progress.score = nil
-      expect(@progress).to_not be_valid
+      expect(@progress).not_to be_valid
       expect(@progress.errors[:score]).to include("can't be blank")
     end
 
     it 'is invalid without a test' do
       @progress.test = nil
-      expect(@progress).to_not be_valid
+      expect(@progress).not_to be_valid
       expect(@progress.errors[:test]).to include("can't be blank")
     end
 
     it 'is invalid without a user' do
       @progress.user = nil
-      expect(@progress).to_not be_valid
+      expect(@progress).not_to be_valid
       expect(@progress.errors[:user]).to include("can't be blank")
     end
 
@@ -57,16 +58,17 @@ RSpec.describe Progress, type: :model do
 
     it 'is invalid with a score less than 0' do
       @progress.score = -1
-      expect(@progress).to_not be_valid
+      expect(@progress).not_to be_valid
       expect(@progress.errors[:score]).to include('must be greater than or equal to 0')
     end
 
     it 'is invalid with a score greater than 100' do
       @progress.score = 101
-      expect(@progress).to_not be_valid
+      expect(@progress).not_to be_valid
       expect(@progress.errors[:score]).to include('must be less than or equal to 100')
     end
   end
+  # rubocop:enable Metrics/BlockLength
 
   describe 'associations' do
     it 'belongs to a user' do

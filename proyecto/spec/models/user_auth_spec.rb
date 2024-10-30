@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe 'User Authentication', type: :request do
@@ -15,7 +17,7 @@ RSpec.describe 'User Authentication', type: :request do
 
     it 'prevents login for deleted accounts' do
       @user.mark_as_deleted
-    
+
       post '/login', { name: @user.name, password: @user.password }
       expect(last_response).to be_ok
       expect(last_request.path).to eq('/login')
@@ -32,7 +34,7 @@ RSpec.describe 'User Authentication', type: :request do
       follow_redirect!
       expect(last_response).to be_ok
       expect(last_request.path).to eq('/')
-      expect(last_response.body).to include('Tu cuenta ha sido eliminada. Vuelve pronto!')
+      expect(last_response.body).to include('Tu cuenta ha sido eliminada. ¡Vuelve pronto!')
     end
   end
 end

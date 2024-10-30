@@ -10,4 +10,3 @@ RSpec.describe 'Authentication Redirect', type: :request do
     expect(last_request.path).to eq('/login')
   end
 end
-
