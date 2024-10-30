@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require './models/option'
 require './models/question'
@@ -17,7 +19,6 @@ RSpec.describe Option, type: :model do
     it 'is valid with content and a question' do
       expect(@option).to be_valid
     end
-    
     it 'is invalid without content' do
       @option.content = nil
       expect(@option).to_not be_valid

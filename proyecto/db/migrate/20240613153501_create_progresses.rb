@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Modelo de un progreso.
 class CreateProgresses < ActiveRecord::Migration[7.1]
   def change
     create_table :progresses do |t|

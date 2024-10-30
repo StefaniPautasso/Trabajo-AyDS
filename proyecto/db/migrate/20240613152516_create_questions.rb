@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Modelo de la creación de una pregunta.
 class CreateQuestions < ActiveRecord::Migration[7.1]
   def change
     create_table :questions do |t|

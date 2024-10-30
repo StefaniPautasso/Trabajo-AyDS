@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'rack/test'
 require './server'
 
 RSpec.describe 'Sections Page', type: :integration do
-
   before do
     post '/register', { name: 'NewUser', password: 'password123' }
   end
@@ -16,6 +17,4 @@ RSpec.describe 'Sections Page', type: :integration do
     expect(last_response.body).to include('Section 1')
     expect(last_response.body).to include('Section 2')
   end
-
 end
-

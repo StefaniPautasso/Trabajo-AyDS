@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require './models/question'
 require './models/test'
@@ -11,8 +13,8 @@ RSpec.describe Question, type: :model do
     it 'is valid with content and a test' do
       question = Question.new(content: 'Example question', test: test)
       expect(question).to be_valid
-    end  
-  
+    end
+
     it 'is invalid without content' do
       question = Question.new(content: nil, test: test)
       expect(question).to_not be_valid
@@ -23,17 +25,15 @@ RSpec.describe Question, type: :model do
       question = Question.new(content: 'Example question', test: nil)
       expect(question).to_not be_valid
       expect(question.errors[:test]).to include("can't be blank")
-    end   
+    end
   end
-  
+
   describe 'associations' do
     it 'belongs to a test' do
       section = Section.create(title: 'Section 1')
       test = Test.create(title: 'Test 1', section: section)
       question = Question.new(content: 'Question content', test: test)
       expect(question.test).to eq(test)
-    end    
+    end
   end
 end
-
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './server'
 require 'rack/test'
 
@@ -37,5 +39,3 @@ RSpec.describe 'Ranking', type: :integration do
     expect(last_response.body).to include('testuser')
   end
 end
-
-

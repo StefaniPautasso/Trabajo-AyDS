@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'rack/test'
 require './server'
 
-RSpec.describe 'Lesson Access', type: :integration do
+RSpec
+  .describe
+   'Lesson Access', type: :integration do
   include Rack::Test::Methods
 
   before do
@@ -22,9 +26,7 @@ RSpec.describe 'Lesson Access', type: :integration do
       lesson_type: :identify
     )
 
-    if @lesson.persisted?
-      puts "Lesson successfully created with ID: #{@lesson.id}"
-    end
+    puts "Lesson successfully created with ID: #{@lesson.id}" if @lesson.persisted?
   end
 
   it 'allows the user to access a specific lesson' do

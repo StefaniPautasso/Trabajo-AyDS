@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 sections = [
   { title: 'Asfixia' },
   { title: 'Quemaduras' },

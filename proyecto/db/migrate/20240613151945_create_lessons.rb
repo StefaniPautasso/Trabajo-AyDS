@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Modelo de una lección de un curso.
 class CreateLessons < ActiveRecord::Migration[7.1]
   def change
     create_table :lessons do |t|
