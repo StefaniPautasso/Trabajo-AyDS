@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/BlockLength
 require 'spec_helper'
 require './models/answer'
 require './models/user'
@@ -110,4 +109,3 @@ RSpec.describe Answer, type: :model do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength

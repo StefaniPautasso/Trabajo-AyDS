@@ -5,8 +5,7 @@ require 'rack/test'
 require './server'
 
 RSpec
-  .describe
-   'Lesson Access', type: :integration do
+  .describe 'Lesson Access', type: :integration do
   include Rack::Test::Methods
 
   before do

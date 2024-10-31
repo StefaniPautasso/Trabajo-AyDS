@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 users = [
   { name: 'user1', password: 'password1' },
   { name: 'user2', password: 'password2' },

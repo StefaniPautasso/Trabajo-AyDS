@@ -78,8 +78,7 @@ questions = [
     test: 'Test de Envenenamiento' },
   { content: '¿Cuál de las siguientes acciones es INCORRECTA si una persona está inconsciente debido a envenenamiento?',
     test: 'Test de Envenenamiento' },
-  { content: 
-      '¿Cuál es una medida preventiva importante para evitar el envenenamiento en niños?',
+  { content: '¿Cuál es una medida preventiva importante para evitar el envenenamiento en niños?',
     test: 'Test de Envenenamiento' },
   { content: '¿Qué debería hacer si encuentra a una persona en un ambiente con olor a gas y sospecha de envenenamiento?',
     test: 'Test de Envenenamiento' },

@@ -3,8 +3,7 @@
 require 'spec_helper'
 require './models/user'
 
-RSpec.describe
-  User,type: :model do
+RSpec.describe User, type: :model do
   describe 'validations' do
     let(:user) { User.new(name: 'UserTest', password: 'passwordTest') }
 
