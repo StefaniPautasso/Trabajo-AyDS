@@ -9,7 +9,6 @@ require './models/question'
 require './models/option'
 require './models/answer'
 
-# rubocop:disable Metrics/BlockLength
 RSpec.describe Progress, type: :model do
   let(:user) { User.create(name: 'TestUser', password: 'password123') }
   let(:section) { Section.create(title: 'Test Section') }
@@ -68,7 +67,6 @@ RSpec.describe Progress, type: :model do
       expect(@progress.errors[:score]).to include('must be less than or equal to 100')
     end
   end
-  # rubocop:enable Metrics/BlockLength
 
   describe 'associations' do
     it 'belongs to a user' do

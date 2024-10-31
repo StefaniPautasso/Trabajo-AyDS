@@ -62,59 +62,49 @@ options = [
   {
     content: 'Inclinar a la persona hacia atrás y hacer respiración boca a boca.',
     correct: false,
-    question: 'En caso de asfixia total en una persona adulta, cuál es el siguiente paso después de dar cinco '
-              'palmadas firmes en la espalda si no se despeja la obstrucción?'
+    question: 'En caso de asfixia total en una persona adulta, cuál es el siguiente paso después de dar cinco palmadas firmes en la espalda si no se despeja la obstrucción?'
   },
 
   {
     content: 'Realizar cinco presiones abdominales.',
     correct: false,
-    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las '
-              'palmadas en la espalda no funcionan?'
+    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las palmadas en la espalda no funcionan?'
   },
   {
     content: 'Dar respiración boca a boca.',
     correct: false,
-    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las '
-              'palmadas en la espalda no funcionan?'
+    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las palmadas en la espalda no funcionan?'
   },
   {
     content: 'Dar hasta cinco compresiones en el pecho.',
     correct: true,
-    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las '
-              'palmadas en la espalda no funcionan?'
+    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las palmadas en la espalda no funcionan?'
   },
   {
     content: 'Sacudir al bebé suavemente.',
     correct: false,
-    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las '
-              'palmadas en la espalda no funcionan?'
+    question: '¿Cuál es la técnica adecuada para tratar la asfixia grave en bebés menores de un año si las palmadas en la espalda no funcionan?'
   },
 
   {
     content: 'Para verificar si el objeto causó alguna reacción alérgica.',
     correct: false,
-    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de '
-              'tratar una asfixia grave, incluso si la persona parece estar bien?'
+    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de tratar una asfixia grave, incluso si la persona parece estar bien?'
   },
   {
-    content: 'Porque la persona podría tener heridas internas o el objeto podría haber causado daño en la vía '
-              'respiratoria.',
+    content: 'Porque la persona podría tener heridas internas o el objeto podría haber causado daño en la vía respiratoria.',
     correct: true,
-    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de '
-              'tratar una asfixia grave, incluso si la persona parece estar bien?'
+    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de tratar una asfixia grave, incluso si la persona parece estar bien?'
   },
   {
     content: 'Para asegurarse de que la persona no tenga infecciones respiratorias.',
     correct: false,
-    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de '
-              'tratar una asfixia grave, incluso si la persona parece estar bien?'
+    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de tratar una asfixia grave, incluso si la persona parece estar bien?'
   },
   {
     content: 'Porque la persona necesita medicamentos para prevenir futuros episodios de asfixia.',
     correct: false,
-    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de '
-              'tratar una asfixia grave, incluso si la persona parece estar bien?'
+    question: '¿Cuál es la razón por la que se debe consultar a los servicios de emergencias médicas después de tratar una asfixia grave, incluso si la persona parece estar bien?'
   },
 
   # OPCIONES DE LAS PREGUNTAS DE QUEMADURAS
@@ -185,27 +175,22 @@ options = [
   {
     content: 'Enfriar la quemadura con hielo y cubrirla con un paño seco.',
     correct: false,
-    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del '
-              'cuerpo?'
+    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del cuerpo?'
   },
   {
-    content: 'Enfriar la quemadura con agua corriente, cubrirla con un vendaje húmedo y llevar a la persona a '
-              'urgencias médicas.',
+    content: 'Enfriar la quemadura con agua corriente, cubrirla con un vendaje húmedo y llevar a la persona a urgencias médicas.',
     correct: true,
-    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del '
-              'cuerpo?'
+    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del cuerpo?'
   },
   {
     content: 'No tocar la quemadura y llevar a la persona a urgencias médicas sin enfriar la herida.',
     correct: false,
-    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del '
-              'cuerpo?'
+    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del cuerpo?'
   },
   {
     content: 'Aplicar ungüento antibiótico y esperar a que la quemadura se cure por sí sola.',
     correct: false,
-    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del '
-              'cuerpo?'
+    question: '¿Qué se debe hacer si una persona presenta una quemadura grande y profunda en una zona extensa del cuerpo?'
   },
 
   {
@@ -258,8 +243,7 @@ options = [
     question: '¿Cuál es una señal de advertencia común que puede indicar que una persona se está ahogando?'
   },
   {
-    content: 'La persona está en posición vertical en el agua y no usa sus piernas para avanzar o mantener su cabeza '
-              'por encima del agua.',
+    content: 'La persona está en posición vertical en el agua y no usa sus piernas para avanzar o mantener su cabeza por encima del agua.',
     correct: true,
     question: '¿Cuál es una señal de advertencia común que puede indicar que una persona se está ahogando?'
   },
@@ -319,26 +303,22 @@ options = [
   {
     content: 'Porque es más rápido que esperar a que lleguen los servicios de emergencia.',
     correct: false,
-    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin '
-              'ponerse en peligro?'
+    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin ponerse en peligro?'
   },
   {
     content: 'Para evitar la posibilidad de que el rescatador también se convierta en una víctima.',
     correct: true,
-    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin '
-              'ponerse en peligro?'
+    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin ponerse en peligro?'
   },
   {
     content: 'Para demostrar habilidades de natación avanzadas.',
     correct: false,
-    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin '
-              'ponerse en peligro?'
+    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin ponerse en peligro?'
   },
   {
     content: 'Porque siempre es mejor intentar rescatar a alguien solo, sin ayuda.',
     correct: false,
-    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin '
-              'ponerse en peligro?'
+    question: '¿Cuál es una de las razones por las que es importante aprender formas seguras de rescatar a otros sin ponerse en peligro?'
   },
 
     # OPCIONES DE LAS PREGUNTAS DE CONVULSIÓN
@@ -367,26 +347,22 @@ options = [
     {
       content: 'Colocar a la persona en posición lateral.',
       correct: true,
-      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la '
-                'convulsión?'
+      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la convulsión?'
     },
     {
       content: 'Administrar agua para que beba.',
       correct: false,
-      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la '
-                'convulsión?'
+      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la convulsión?'
     },
     {
       content: 'Dar respiraciones de rescate inmediatamente.',
       correct: false,
-      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la '
-                'convulsión?'
+      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la convulsión?'
     },
     {
       content: 'Poner un objeto en su boca para mantener las vías respiratorias abiertas.',
       correct: false,
-      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la '
-                'convulsión?'
+      question: '¿Qué debe hacer si una persona sufre una convulsión y tiene dificultades para respirar después de la convulsión?'
     },
   
     {
@@ -413,26 +389,22 @@ options = [
     {
       content: 'Dejar sola a la persona hasta que se calme.',
       correct: false,
-      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor '
-                'manera de manejar esta situación?'
+      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor manera de manejar esta situación?'
     },
     {
       content: 'Hablarle suavemente y evitar tocarla en exceso.',
       correct: true,
-      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor '
-                'manera de manejar esta situación?'
+      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor manera de manejar esta situación?'
     },
     {
       content: 'Sujetarla firmemente para evitar que se mueva.',
       correct: false,
-      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor '
-                'manera de manejar esta situación?'
+      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor manera de manejar esta situación?'
     },
     {
       content: 'Administrar medicamentos sedantes para calmarla.',
       correct: false,
-      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor '
-                'manera de manejar esta situación?'
+      question: 'Después de una convulsión, una persona puede comportarse de manera confusa o agresiva. ¿Cuál es la mejor manera de manejar esta situación?'
     },
   
     # OPCIONES DE LAS PREGUNTAS DE FRACTURAS, ESGUINCES Y DESGARROS
@@ -440,26 +412,22 @@ options = [
     {
       content: 'Deformidad en la zona afectada.',
       correct: false,
-      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, '
-                'esguince o desgarro?'
+      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, esguince o desgarro?'
     },
     {
       content: 'Dolor y dificultad para mover la parte del cuerpo afectada.',
       correct: false,
-      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, '
-                'esguince o desgarro?'
+      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, esguince o desgarro?'
     },
     {
       content: 'Ausencia de dolor pero con leve hinchazón.',
       correct: true,
-      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, '
-                'esguince o desgarro?'
+      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, esguince o desgarro?'
     },
     {
       content: 'Sensación o sonido de los huesos al rechinar.',
       correct: false,
-      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, '
-                'esguince o desgarro?'
+      question: '¿Cuál de las siguientes señales NO es un indicio claro de que una persona puede tener una fractura, esguince o desgarro?'
     },
   
     {
@@ -528,26 +496,22 @@ options = [
     {
       content: 'Asumir que se trata de un esguince y aplicar una venda elástica.',
       correct: false,
-      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, '
-                '¿qué debe hacer?'
+      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, ¿qué debe hacer?'
     },
     {
       content: 'Asumir que se trata de un desgarro y aplicar calor.',
       correct: false,
-      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, '
-                '¿qué debe hacer?'
+      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, ¿qué debe hacer?'
     },
     {
       content: 'Asumir que se trata de una fractura y proceder como tal.',
       correct: true,
-      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, '
-                '¿qué debe hacer?'
+      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, ¿qué debe hacer?'
     },
     {
       content: 'Evitar mover la extremidad y esperar a que la hinchazón disminuya.',
       correct: false,
-      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, '
-                '¿qué debe hacer?'
+      question: 'En una situación en la que no se puede determinar si una lesión es un esguince, desgarro o fractura, ¿qué debe hacer?'
     },
   
     # OPCIONES DE LAS PREGUNTAS DE ENVENENAMIENTO
@@ -744,29 +708,24 @@ options = [
   },
 
   {
-    content: 'Asegurar la seguridad y protección, tanto suya como de la persona lesionada, antes de prestar asistencia '
-              'inmediata.',
+    content: 'Asegurar la seguridad y protección, tanto suya como de la persona lesionada, antes de prestar asistencia inmediata.',
     correct: true,
-    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de '
-              'desastre o conflicto?'
+    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de desastre o conflicto?'
   },
   {
     content: 'Aflojar el torniquete cada pocos minutos para aliviar la presión.',
     correct: false,
-    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de '
-              'desastre o conflicto?'
+    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de desastre o conflicto?'
   },
   {
     content: 'Trasladar a la persona herida inmediatamente a un hospital.',
     correct: false,
-    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de '
-              'desastre o conflicto?'
+    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de desastre o conflicto?'
   },
   {
     content: 'Intentar extraer cualquier objeto incrustado para limpiar la herida.',
     correct: false,
-    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de '
-              'desastre o conflicto?'
+    question: '¿Cuál es una prioridad absoluta al brindar primeros auxilios en una hemorragia severa en un entorno de desastre o conflicto?'
   },
 
   # OPCIONES DE LAS PREGUNTAS DE MORDEDURAS Y PICADURAS DE INSECTOS
@@ -774,26 +733,22 @@ options = [
   {
     content: 'Consumir alimentos al aire libre sin revisar.',
     correct: false,
-    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la '
-              'enfermedad de Lyme?'
+    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la enfermedad de Lyme?'
   },
   {
     content: 'Cubrirse la piel expuesta y usar repelente de insectos.',
     correct: true,
-    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la '
-              'enfermedad de Lyme?'
+    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la enfermedad de Lyme?'
   },
   {
     content: 'Dejar alimentos y bebidas al alcance de los insectos.',
     correct: false,
-    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la '
-              'enfermedad de Lyme?'
+    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la enfermedad de Lyme?'
   },
   {
     content: 'Permanecer cerca de plantas en flor y arbustos.',
     correct: false,
-    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la '
-              'enfermedad de Lyme?'
+    question: '¿Cuál es una medida efectiva para prevenir enfermedades transmitidas por insectos como la malaria o la enfermedad de Lyme?'
   },
 
   {
@@ -841,26 +796,22 @@ options = [
   {
     content: 'Contactar a los servicios médicos de emergencia de inmediato.',
     correct: true,
-    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o '
-              'mordedura de insecto?'
+    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o mordedura de insecto?'
   },
   {
     content: 'Esperar a ver si los síntomas desaparecen por sí solos.',
     correct: false,
-    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o '
-              'mordedura de insecto?'
+    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o mordedura de insecto?'
   },
   {
     content: 'Aplicar una bolsa de hielo en la zona afectada.',
     correct: false,
-    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o '
-              'mordedura de insecto?'
+    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o mordedura de insecto?'
   },
   {
     content: 'Administrar antihistamínicos sin consultar a un profesional médico.',
     correct: false,
-    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o '
-              'mordedura de insecto?'
+    question: '¿Qué hacer si una persona muestra signos de una reacción alérgica grave después de una picadura o mordedura de insecto?'
   },
 
   {
@@ -973,20 +924,17 @@ options = [
   {
     content: 'Para obtener una respuesta rápida del personal de emergencia.',
     correct: true,
-    question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos '
-              'de emergencia sobre un caso de shock?'
+    question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos de emergencia sobre un caso de shock?'
   },
   {
     content: 'Para recibir instrucciones sobre cómo administrar primeros auxilios.',
     correct: false,
-    question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos '
-              'de emergencia sobre un caso de shock?'
+    question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos de emergencia sobre un caso de shock?'
   },
   {
     content: 'Para evitar la necesidad de asistencia médica de emergencia.',
     correct: false,
-    question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos '
-              'de emergencia sobre un caso de shock?'
+    question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos de emergencia sobre un caso de shock?'
   },
   {
     content: 'Para asegurarse de que la persona esté correctamente diagnosticada.',
@@ -994,7 +942,6 @@ options = [
     question: '¿Por qué es importante explicar claramente la condición de la persona al hablar con los servicios médicos '
               'de emergencia sobre un caso de shock?'
   }
-
 ]
 
 options.each do |option_attributes|

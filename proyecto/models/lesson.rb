@@ -13,4 +13,3 @@ class Lesson < ActiveRecord::Base
   validates :lesson_type, presence: true
   validates :section, presence: true
 end
-

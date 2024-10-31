@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds/questions.rb'
+    - 'db/seeds/options.rb'
+
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context']
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'models/progress.rb'
+    - 'server.rb'

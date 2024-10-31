@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'spec_helper'
 require 'rack/test'
 require './server'
@@ -10,4 +11,3 @@ RSpec.describe 'Registration Page', type: :request do
     expect(last_response.body).to include('Registrarse')
   end
 end
-

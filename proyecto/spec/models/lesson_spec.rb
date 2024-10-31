@@ -4,8 +4,7 @@ require 'spec_helper'
 require './models/lesson'
 require './models/section'
 
-RSpec.describe 
-  Lesson, type: :model do
+RSpec.describe Lesson, type: :model do
   let(:section) { Section.create(title: 'Test Section') }
 
   describe 'validations' do

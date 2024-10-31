@@ -10,8 +10,7 @@ class Progress < ActiveRecord::Base
   validates :test, presence: true
   validates :user, presence: true
 
-  def calculate_score
-    (test)
+  def calculate_score(test)
     total_questions = test.questions.count
     correct_answers = Answer.joins(:question, :option)
                             .where(

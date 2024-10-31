@@ -17,6 +17,6 @@ tests = [
 
 tests.each do |test_attributes|
   Test.find_or_create_by!(title: test_attributes[:title]) do |test|
-  test.section = test_attributes[:section]
+    test.section = test_attributes[:section]
   end
 end
