@@ -4,7 +4,7 @@
 class User < ActiveRecord::Base
   has_many :progresses
   has_many :tests, through: :progresses
-  has_and_belongs_to_many :sections
+  has_and_belongs_to_many :sections, join_table: :user_sections
   has_many :answers
 
   validates :name,

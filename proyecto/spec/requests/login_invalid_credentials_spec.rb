@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 require 'rack/test'
-require './server'
+require './app'
 
 RSpec.describe 'Login Invalid Credentials', type: :request do
   it 'shows an error message when login credentials are incorrect' do
