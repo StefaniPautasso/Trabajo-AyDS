@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 require 'rack/test'
-require './server'
+require './app'
 
 RSpec.describe 'Login Page', type: :integration do
   it 'renders the login page successfully' do

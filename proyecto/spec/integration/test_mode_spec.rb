@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 require 'rack/test'
-require './server'
+require './app'
 
 RSpec.describe 'Test Completion', type: :integration do
   before do
@@ -16,12 +16,15 @@ RSpec.describe 'Test Completion', type: :integration do
     follow_redirect!
   end
 
-  it 'completes the test successfully' do
+  it 'displays the select test mode page and completes the test successfully' do
+    get "/sections/#{@section.id}/select_test_mode"
+    expect(last_response.status).to eq(200)
+    expect(last_response.body).to include('Selecciona el modo del Test')
+
     post "/sections/#{@section.id}/select_test_mode", test_mode: 'normal'
     follow_redirect!
 
     post "/sections/#{@section.id}/test", "question_#{@question.id}" => @option.id
-    follow_redirect!
 
     expect(last_response.status).to eq(200)
     expect(last_response.body).to include('¡Has aprobado!')

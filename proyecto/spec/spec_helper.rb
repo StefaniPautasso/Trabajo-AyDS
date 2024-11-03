@@ -20,16 +20,12 @@ ENV['RACK_ENV'] = 'test'
 require 'simplecov'
 SimpleCov.start
 require 'rack/test'
-require './server'
+require_relative '../app'
 require 'rspec'
 require 'active_record'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-
-  def app
-    App
-  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -93,4 +89,7 @@ RSpec.configure do |config|
   config.after(:each) do
     ActiveRecord::Base.connection.rollback_transaction
   end
+end
+def app
+  App
 end

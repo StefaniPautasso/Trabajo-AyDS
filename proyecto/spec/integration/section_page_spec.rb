@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 require 'rack/test'
-require './server'
+require './app'
 
 RSpec.describe 'Section Page', type: :integration do
   before do

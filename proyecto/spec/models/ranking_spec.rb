@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './server'
+require './app'
 require 'rack/test'
 
 RSpec.describe 'Ranking', type: :integration do

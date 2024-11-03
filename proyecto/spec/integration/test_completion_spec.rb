@@ -2,7 +2,6 @@
 
 require 'spec_helper'
 require 'rack/test'
-require './server'
 
 RSpec.describe 'Test Completion', type: :integration do
   include Rack::Test::Methods
@@ -20,7 +19,7 @@ RSpec.describe 'Test Completion', type: :integration do
   end
 
   it 'updates the user progress after completing a test' do
-    post '/login', { name: 'testuser', password: 'password123' }
+    post '/login', { name: 'testuser', password: 'password123' } # aca
     expect(last_response.status).to eq(302)
 
     follow_redirect!
