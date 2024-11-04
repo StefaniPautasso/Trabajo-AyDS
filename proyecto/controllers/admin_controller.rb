@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require 'sinatra/flash'
 
 # Controlador de la ruta de administrador
 class AdminController < Sinatra::Base
@@ -15,12 +16,9 @@ class AdminController < Sinatra::Base
 
   post '/agregar_pregunta' do
     @test = Test.find_by(id: params[:test_id])
-    unless @test
-      @error = 'Test no encontrado.'
-      return erb(:alta_preguntas)
-    end
 
     question = Question.new(content: params[:content], test: @test)
+
     unless question.save
       @error = 'Hubo un problema al agregar la pregunta.'
       @tests = Test.all
@@ -35,11 +33,8 @@ class AdminController < Sinatra::Base
     end
 
     correct_option = question.options[correct_option_index]
-    unless correct_option
-      @error = 'Opción no válida.'
-      return erb :alta_preguntas
-    end
-    correct_option.update(correct: true)
+
+    correct_option&.update(correct: true)
 
     redirect '/menu_admin?success=Pregunta agregada correctamente'
   end
